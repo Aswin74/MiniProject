@@ -5,3 +5,15 @@
 body{
     background: grey;
 }
+
+.text-pink,.navbar-brand,.nav-link:hover{
+    color: #f53f54;
+}
+
+
+
+.logo{
+    width:20px;
+    height: 100%;
+}
+

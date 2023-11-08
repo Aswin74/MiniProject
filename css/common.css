@@ -3,17 +3,35 @@
 }
 
 body{
-    background: grey;
+    
+    background-repeat: no-repeat;
+    background: rgb(0,0,0,0.7)url("https://i.ibb.co/RCtjQg3/marcus-loke-WQJv-WU-HZFo-unsplash.jpg");
+    background-size: cover;
+    background-blend-mode:multiply;
+
 }
 
 .text-pink,.navbar-brand,.nav-link:hover{
     color: #f53f54;
 }
 
-
+a.text-pink:hover{
+    color:white;
+}
 
 .logo{
     width:20px;
     height: 100%;
 }
+
+#signup{
+    color:white;
+    text-decoration: none;
+    background-color: rgb(51, 51, 51);
+}
+
+#signup:hover{
+    background-color:#f53f54 ;
+}
+
 

@@ -4,12 +4,3 @@
         backdrop-filter: blur(10px);
     }
 }
-
-body{
-    background: linear-gradient(to top,black,0.5);
-    background: rgb(0,0,0,0.7)url("https://i.ibb.co/RCtjQg3/marcus-loke-WQJv-WU-HZFo-unsplash.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode:multiply;
-
-}

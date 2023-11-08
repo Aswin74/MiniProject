@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="css/home.css"/>
         <!--Add/edit the homepage css in home.css-->
 
-        <title>Hostel Management | Login</title>
+        <title>HosEx | Login</title>
     </head>
 
     <body class="vh-100 overflow-hidden">
@@ -19,8 +19,10 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent p-0">
             <div class="container-fluid">
-              <a class="navbar-brand py-2 me-1 ms-2 fs-4" href="#">
-                <img class="logo"src="https://i.ibb.co/kJwz4xz/logo.png"/>HosEx</a>
+              <a class="navbar-brand py-2 me-1 ms-2" href="#">
+                <img class="logo"src="https://i.ibb.co/kJwz4xz/logo.png"/>
+              </a>
+              <a class="navbar-brand fs-4 fw-medium">HosEx</a>
               <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -28,7 +30,7 @@
               <!--OffCanvas-->
               <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header border-bottom">
-                  <h5 class="offcanvas-title text-pink" id="offcanvasNavbarLabel">HosEx</h5>
+                  <h5 class="offcanvas-title text-pink fw-medium" id="offcanvasNavbarLabel">HosEx</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body d-flex flex-column align-items-center flex-lg-row">
@@ -46,8 +48,8 @@
 
                 <!--Login/SignUp-->
                   <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                    <a href="#login" class="text-decoration-none text-white">Login</a>
-                    <a href="#signup" class="text-decoration-none text-white rounded-4 px-3 py-1" style="background-color: rgb(56, 56, 56);">Sign Up</a>
+                    <a href="#login" class="text-pink text-decoration-none">Login</a>
+                    <a id="signup" href="#signup" class="text rounded-4 px-3 py-1">Sign Up</a>
                   </div>
                 </div>
               </div>

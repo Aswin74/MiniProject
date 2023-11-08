@@ -1,9 +1,13 @@
+:root{
+    --pink: #f53f54;
+}
+
 *{
     box-sizing: border-box;
 }
 
 body{
-    
+    color:white;
     background-repeat: no-repeat;
     background: rgb(0,0,0,0.7)url("https://i.ibb.co/RCtjQg3/marcus-loke-WQJv-WU-HZFo-unsplash.jpg");
     background-size: cover;
@@ -13,7 +17,7 @@ body{
 }
 
 .text-pink,.navbar-brand,.nav-link:hover{
-    color: #f53f54;
+    color: var(--pink);
 }
 
 a.text-pink:hover{
@@ -32,7 +36,7 @@ a.text-pink:hover{
 }
 
 #signup:hover{
-    background-color:#f53f54 ;
+    background-color:var(--pink) ;
 }
 
 

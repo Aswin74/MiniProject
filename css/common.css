@@ -7,8 +7,9 @@ body{
     background-repeat: no-repeat;
     background: rgb(0,0,0,0.7)url("https://i.ibb.co/RCtjQg3/marcus-loke-WQJv-WU-HZFo-unsplash.jpg");
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     background-blend-mode:multiply;
-
 }
 
 .text-pink,.navbar-brand,.nav-link:hover{

@@ -8,6 +8,8 @@
 }
 
 body{
+    margin: 0;
+    padding: 0;
     color:white;
     background-repeat: no-repeat;
     background: rgb(0,0,0,0.7)url("https://i.ibb.co/RCtjQg3/marcus-loke-WQJv-WU-HZFo-unsplash.jpg");

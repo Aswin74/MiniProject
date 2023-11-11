@@ -12,6 +12,7 @@
 .form{
     height: 350px;
     width: 300px;
+    margin: 7% auto;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     overflow: hidden;

@@ -10,7 +10,7 @@
 }
 
 .form{
-    height: 350px;
+    height: 400px;
     width: 300px;
     margin: 7% auto;
     background-color: rgba(0, 0, 0, 0.5);
@@ -86,7 +86,7 @@ input{
 }
 
 #hidden-btn:checked~.login{
-    transform: translateY(-280px);
+    transform: translateY(-330px);
     background-color: var(--pink);
 }
 

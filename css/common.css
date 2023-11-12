@@ -30,6 +30,10 @@ body{
     color: var(--pink);
 }
 
+.text-pinker{
+    color:var(--pinker)
+}
+
 a.text-pink:hover{
     color:white;
 }

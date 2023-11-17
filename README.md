@@ -7,5 +7,5 @@ Mini Project S6. Hostel Management site
 
 Image Links:
 
-Hostel Bg 1: https://i.ibb.co/RCtjQg3/marcus-loke-WQJv-WU-HZFo-unsplash.jpg
-Hostle Bg 2: 
+Hostel Bg 1: https://i.ibb.co/RCtjQg3/marcus-loke-WQJv-WU-HZFo-unsplash.jpg (login)
+Hostle Bg 2: https://i.ibb.co/3T0WS2J/wepik-export-20231117073905u-Y5t.jpg (contact)

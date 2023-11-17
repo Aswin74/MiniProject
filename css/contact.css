@@ -1,12 +1,79 @@
-.contentA{
-    background-color: rgb(0,0,0,0.7);
-    border-radius: 5px;
+body{
+    background-repeat: no-repeat;
+    background-image: url("https://i.ibb.co/3T0WS2J/wepik-export-20231117073905u-Y5t.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
 }
 
-.content h1{
-    font-family: 'Times New Roman';
-    font-size: 65px;
-    font-weight: bold;
-    text-align:start;
+.content{
+    margin: auto;;
+    height: fit-content;
+    width: 80%;
+    padding: 2em;
+    text-align: center;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--pink);
+}
+
+
+.content h1,.content h4{
     color: var(--pink);
+}
+
+input{
+    height: 40px;
+    width: 45%;
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: gainsboro;
+    background: none;
+    border: none;
+    border-bottom: solid var(--pinker) 2px;
+    outline: none;
+}
+
+.content form #lastName,.content form #phone{
+    margin-left: 3%;
+}
+
+.content form input::placeholder{
+    color: silver;
+}
+
+.content h4{
+    width: 100%;
+    margin-top: 3%;
+    text-align: start;
+}
+
+textarea{
+    resize: none;
+    width:80%;
+    height:5em;
+    font-size: 15px;
+    color: gainsboro;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: solid var(--pinker) 2px;
+}
+
+#submit{
+    border: none;
+    background: var(--pink);
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: gainsboro;
+    width: 100px;
+    padding: 0;
+    margin-right: 100px;
+    transition: 0.3s;
+}
+
+#submit:hover{
+    opacity:0.7;
 }

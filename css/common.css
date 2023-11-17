@@ -26,6 +26,16 @@ body{
     }
 }
 
+.border-bottom {
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--pink)!important;
+}
+
+.btn:hover, .btn:active {
+    color: var(--pinker);
+    background-color: var(--bs-btn-hover-bg);
+    border: none ;
+}
+
 .text-pink,.navbar-brand,.nav-link:hover{
     color: var(--pink);
 }

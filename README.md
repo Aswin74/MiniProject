@@ -1,5 +1,5 @@
 # MiniProject
-Mini Project S6. Hostel Management site
+Mini Project S6. A responsive Hostel Management site
 
 >>Add 'styles Common to all pages'only in common.css
 

@@ -9,9 +9,13 @@ body{
 
 .content h1{
     font-family: 'Times New Roman';
-    font-size: 65px;
+    font-size: clamp(50px,50%,64px);
     font-weight: bold;
     color: var(--pink);
+}
+
+p{
+    color: var(--white);
 }
 
 /**Animating object.**/
@@ -33,21 +37,7 @@ body{
     margin: 7% auto;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    overflow: hidden;
-    animation-duration: 1.5s;
-    animation-name: slideup;
-}
-
-@keyframes slideup{
-    from{
-        transform: translateY(50%);
-        transition: ease-in;
-        opacity: 0;
-    }
-    to{
-        transform: translateY(0%);
-        opacity: 1;
-    }
+    overflow: hidden; 
 }
 
 .signup{
@@ -56,7 +46,7 @@ body{
 }
 
 label{
-    color:white;
+    color:var(--white);
     font-size: 2.3rem;
     cursor:pointer;
     transition: 0.5s ease-in-out;
@@ -72,13 +62,13 @@ label{
 }
 
 .login label{
-    color:white;
+    color:var(--white);
     transform: scale(0.6);
 }
 
 .login button{
     background-color: var(--pinker);
-    color: white;
+    color: var(--white);
 }
 
 input{
@@ -90,14 +80,14 @@ input{
 }
 
 .login input{
-    background-color: rgb(233, 233, 233);
+    background-color: var(--white);
 }
 
 .button{
     width:50%;
     height: 40px;
     background-color: var(--pink);
-    color:white;
+    color: var(--white);
     font-weight: bold;
     font-size: 1rem;
     border:none;
@@ -130,20 +120,35 @@ input{
     transform: scale(0.6);
 }
 
+/**for animation (Vanilla js)**/
+
+.hidden{
+    opacity: 0;
+    transform: translateY(50%);
+    transition: all 1.5s;
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+@media(prefers-reduced-motion){  /**To detect if the user turnen on reduced motions in browser**/
+    .hidden{
+        transition: none;
+    }
+}
+
 /**Responsiveness**/
 @media (max-width:991px){
     body{
         overflow: auto;
         margin-bottom: 50px;
     }
-    .content h1{
-        font-size: 50px;
-    }
     .content{
-        font-size: 95%;
-    }
-    .contentA{
-        display: block;
-        font-family: 'Times New Roman';
+        min-height : 100vh;
+        padding: 30px;
+        display: flex;
+        flex-direction:column ;
     }
 }

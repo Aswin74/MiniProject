@@ -28,7 +28,7 @@ input{
     width: 45%;
     margin-bottom: 10px;
     font-size: 17px;
-    color: gainsboro;
+    color: var(--white);
     background: none;
     border: none;
     border-bottom: solid var(--pinker) 2px;
@@ -54,7 +54,7 @@ textarea{
     width:80%;
     height:5em;
     font-size: 15px;
-    color: gainsboro;
+    color: var(--white);
     background: none;
     outline: none;
     border: none;
@@ -67,7 +67,7 @@ textarea{
     border-radius: 5px;
     margin-top: 20px;
     font-size: 18px;
-    color: gainsboro;
+    color: var(--white);
     width: 100px;
     padding: 0;
     margin-right: 100px;

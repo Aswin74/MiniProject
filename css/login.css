@@ -40,6 +40,10 @@ p{
     overflow: hidden; 
 }
 
+form {
+    margin-block-end: 0em;
+}
+
 .signup{
     width:100%;
     height: 100%; 

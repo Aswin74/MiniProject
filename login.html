@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/login.css" />
   <!--Add/edit the login page css in login.css-->
 
-  <title>HosEx | Login</title>
+  <title>HostEx | Login</title>
 </head>
 
 <body>
@@ -26,10 +26,10 @@
   <!--navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent p-0 border-bottom">
     <div class="container-fluid">
-      <a class="navbar-brand py-2 me-1 ms-2" href="#">
+      <a class="navbar-brand py-2 me-1 ms-2" href="home.html">
         <img class="logo" src="https://i.ibb.co/kJwz4xz/logo.png" />
       </a>
-      <a class="navbar-brand fs-4 fw-medium" href="">HosEx</a>
+      <a class="navbar-brand fs-4 fw-medium" href="home.html">HostEx</a>
       <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="fas fa-bars text-pinker"></span>
@@ -39,13 +39,13 @@
       <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header border-bottom">
-          <h5 class="offcanvas-title text-pink fw-medium" id="offcanvasNavbarLabel">HosEx</h5>
+          <h5 class="offcanvas-title text-pink fw-medium" id="offcanvasNavbarLabel">HostEx</h5>
           <i class=" btn fa fa-x text-pinker" data-bs-dismiss="offcanvas" aria-label="Close"></i>
         </div>
         <div class="offcanvas-body d-flex flex-column align-items-center flex-lg-row">
           <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link mx-2" href="#home">Home</a>
+              <a class="nav-link mx-2" href="home.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mx-2" href="about.html">About Us</a>
@@ -66,9 +66,11 @@
   </nav>
 
   <!--Body-->
-  <div class="container d-md-flex flex-lg-row flex-sm-column mt-4 gx-lg-2 gap-lg-4 justify-content-lg-between align-items-center">
+  <div
+    class="container d-md-flex flex-lg-row flex-sm-column mt-4 gx-lg-2 gap-lg-4 justify-content-lg-between align-items-center">
     <div class="content ps-md-5 col-lg-6">
-      <h1>Your <span style="color:var(--white)">Home</span>,<br>Away from <span style="color:var(--white)">Home</span>.</h1>
+      <h1>Your <span style="color:var(--white)">Home</span>,<br>Away from <span style="color:var(--white)">Home</span>.
+      </h1>
       <p>At Hostel Explorer, we offer online hostel booking for students.<br> Our user friendly
         website allows you to book your dream hostel with ease, and we provide detailed profiles of hostels nearby your
         preferred college.<br> </p>
@@ -81,15 +83,15 @@
       <input type="checkbox" id="hidden-btn" /><!--trigger-->
 
       <form action="signup.php" method="post">
-      <div class="signup d-flex flex-column align-items-center pt-3 pb-5">
-        <label class="mb-4" for="hidden-btn">SignUp</label>
-        <input name="username"type="text" placeholder=" username">
-        <input name="phone"type="tel" placeholder=" phone number">
-        <input name="email"type="email" placeholder=" email">
-        <input name="password"type="password" placeholder=" password">
-        <button class="button mt-2">Sign Up</button>
-        </form>
-      </div>
+        <div class="signup d-flex flex-column align-items-center pt-3 pb-5">
+          <label class="mb-4" for="hidden-btn">SignUp</label>
+          <input name="username" type="text" placeholder=" username">
+          <input name="phone" type="tel" placeholder=" phone number">
+          <input name="email" type="email" placeholder=" email">
+          <input name="password" type="password" placeholder=" password">
+          <button class="button mt-2">Sign Up</button>
+        </div>
+      </form>
 
       <div class="login d-flex flex-column align-items-center pb-4">
         <label class="mb-4" for="hidden-btn">Login</label>

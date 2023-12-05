@@ -1,3 +1,10 @@
+<?php
+    $conn = new mysqli("localhost", "root", "", "hostel_lists");
+    $sql = "SELECT * FROM hostel";
+    $result = mysqli_query($conn,$sql);
+
+?>
+
 <html>
 
 <head>
@@ -16,7 +23,7 @@
     <link rel="stylesheet" href="css/home.css" />
     <!--Add/edit the home page css in home.css-->
 
-    <title>HostEx | Login</title>
+    <title>HostEx | Home</title>
 </head>
 
 <body>
@@ -26,10 +33,10 @@
     <!--navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent p-0 border-bottom">
         <div class="container-fluid">
-            <a class="navbar-brand py-2 me-1 ms-2" href="home.html">
+            <a class="navbar-brand py-2 me-1 ms-2" href="home.php">
                 <img class="logo" src="https://i.ibb.co/kJwz4xz/logo.png" />
             </a>
-            <a class="navbar-brand fs-4 fw-medium" href="home.html">HostEx</a>
+            <a class="navbar-brand fs-4 fw-medium" href="home.php">HostEx</a>
             <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="fas fa-bars text-pinker"></span>
@@ -45,7 +52,7 @@
                 <div class="offcanvas-body d-flex flex-column align-items-center flex-lg-row">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link mx-2" href="home.html">Home</a>
+                            <a class="nav-link mx-2" href="home.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mx-2" href="about.html">About Us</a>
@@ -69,11 +76,16 @@
     <div class="container">
         <div class="cards-group">
 
+            <!--card iterating-->
+            <?php
+                while($row=mysqli_fetch_assoc($result)){
+            ?>
+
             <div class="card">
                 <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1"/>
                 <div class="card-content">
-                    <div class="card-price">$987.00</div>
-                    <div class="card-name">Hostel Name</div>
+                    <div class="card-price">$<?php echo $row["price"] ?>/<span style="font-size:70%">month</span> </div>
+                    <div class="card-name"><?php echo $row["name"] ?></div>
                     <div class="card-rating">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -85,69 +97,9 @@
                 </div>
             </div>
 
-            <div class="card">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1"/>
-                <div class="card-content">
-                    <div class="card-price">$987.00</div>
-                    <div class="card-name">Hostel Name</div>
-                    <div class="card-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <div class="card-descripton">Lorem Ipsum blah blah blah </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1"/>
-                <div class="card-content">
-                    <div class="card-price">$987.00</div>
-                    <div class="card-name">Hostel Name</div>
-                    <div class="card-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <div class="card-descripton">Lorem Ipsum blah blah blah </div>
-                </div>
-            </div>
-
-                <div class="card">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1"/>
-                <div class="card-content">
-                    <div class="card-price">$987.00</div>
-                    <div class="card-name">Hostel Name</div>
-                    <div class="card-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <div class="card-descripton">Lorem Ipsum blah blah blah </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1"/>
-                <div class="card-content">
-                    <div class="card-price">$987.00</div>
-                    <div class="card-name">Hostel Name</div>
-                    <div class="card-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <div class="card-descripton">Lorem Ipsum blah blah blah </div>
-                </div>
-            </div>
+            <?php
+                }
+            ?>
 
         </div>
     </div>

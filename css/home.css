@@ -2,19 +2,21 @@ body{
     background-image: url('https://i.ibb.co/tD7qBcc/home.jpg');
 }
 
+.glassback{
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
 .cards-group{
-    display: grid;
-    grid-template-columns: repeat(auto-fill ,minmax(15rem,1fr));
+   display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(14rem,1fr));
     gap: 5px;
     margin: 5px 0px 30px ;
-
 }
 
 .card{
-    aspect-ratio: 1 / 1.5;
     color: var(--white);
     background-color: rgb(27, 26, 31,0.5) ;
-    backdrop-filter: blur(5px);
     line-height: 1.3;
     cursor: pointer;
     transition: box-shadow 0.3s, transform 0.3s;
@@ -29,8 +31,6 @@ body{
 
 .card img{
     width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
     padding: 10px;
     border-radius: 25px;
 }
@@ -38,7 +38,6 @@ body{
 .card-content{
     margin: 0.6rem;
     padding: 0px 10px;
-    align-self: end;
     z-index: 9;
 }
 
@@ -46,13 +45,12 @@ body{
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--pinker);
-
 }
 
 .card-name{
-    font-size: 1.1rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
     font-weight: 350;
+    margin-bottom: 5px;
 }
 
 .card-rating {
@@ -64,16 +62,6 @@ body{
 .card-location {
     margin-top: 20px;
 }
-
-.stacked{
-    display: grid;
-}
-
-.stacked > * {
-    grid-row: 1/2;
-    grid-column: 1/2;
-}
-
 .tag{
     width: fit-content;
     padding: 3px 6px;
@@ -140,6 +128,15 @@ body{
     transform: scaleX(1.1);
 }
 
+.add-btn{
+    color: var(--pinker);
+    font-size: 3rem;
+    cursor: pointer;
+    position: fixed;
+    right: 5%;
+    bottom: 3%;
+    z-index: 9;
+}
 
 /**Responsiveness**/
 

@@ -9,7 +9,8 @@
        // Fetch additional profile information from the database if needed
    
        // Display the user's profile
-       echo "Welcome to your profile, $username!";
+       //echo "Welcome to your profile, $username!";
+       
        // Add more profile information as needed
    } else {
        // The user is not logged in, redirect to login page
@@ -37,8 +38,6 @@
   <title>HostEx | Profile</title>
 </head>
 <body>
-<!--  <body class="vh-100 overflow-hidden">  -->
- 
   <!--Create Each Contents/sections inside a div-->
 
   <!--navbar-->
@@ -75,8 +74,12 @@
 
           <!--Login/SignUp-->
           <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-            <a href="login.html" class="text-pink text-decoration-none">Login</a>
-            <a id="signup" href="login.html" class="text rounded-4 px-3 py-1">Sign Up</a>
+            <!--<a href="login.html" class="text-pink text-decoration-none">Login</a>
+            <a id="signup" href="login.html" class="text rounded-4 px-3 py-1">Sign Up</a>-->
+
+            <i class="fa-solid fa-user fs-5 me-2 text-pink">
+              <span class="fs-5"><?php echo $username ?></span>
+            </i>
           </div>
         </div>
       </div>

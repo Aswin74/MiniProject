@@ -78,15 +78,13 @@ $result = mysqli_query($conn, $sql);
     </div>
     <!--Cards-->
     <div class="container">
-
-
         <div class="cards-group">
-
             <!--card iterating-->
             <?php
                 while ($row = mysqli_fetch_assoc($result)) {
             ?>
-                <div class="card stacked">
+                <div class="card">
+                    <div class="glassback"></div>
                     <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
                     <div class="card-content">
                         <div class="card-price">₹.<?php echo $row["price"] ?>/<span style="font-size:60%">month</span> </div>
@@ -105,12 +103,12 @@ $result = mysqli_query($conn, $sql);
                 }
             ?>
         </div>
+
+        <div>
+            <i class="fa-solid fa-circle-plus add-btn"></i>
+        </div>
+
     </div>
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 

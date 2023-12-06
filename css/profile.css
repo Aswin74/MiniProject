@@ -1,0 +1,109 @@
+body{
+    background-repeat: no-repeat;
+    background-image: url("https://i.ibb.co/3T0WS2J/wepik-export-20231117073905u-Y5t.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    margin-top:20px;
+   /* background:#F0F8FF;*/
+}
+
+.content{
+    margin: auto;;
+    height: fit-content;
+    width: 80%;
+    padding: 2em;
+    text-align: center;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--pink);
+}
+
+
+.content h1,.content h4{
+    color: var(--pink);
+}
+
+input{
+    height: 40px;
+    width: 45%;
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: var(--white);
+    background: none;
+    border: none;
+    border-bottom: solid var(--pinker) 2px;
+    outline: none;
+}
+
+.content form #lastName,.content form #phone{
+    margin-left: 3%;
+}
+
+.content form input::placeholder{
+    color: silver;
+}
+
+.content h4{
+    width: 100%;
+    margin-top: 3%;
+    text-align: start;
+}
+
+textarea{
+    resize: none;
+    width:80%;
+    height:5em;
+    font-size: 15px;
+    color: var(--white);
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: solid var(--pinker) 2px;
+}
+
+#submit{
+    border: none;
+    background: var(--pink);
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--white);
+    width: 100px;
+    padding: 0;
+    margin-right: 100px;
+    transition: 0.3s;
+}
+
+#submit:hover{
+    opacity:0.7;
+}
+
+/*  profile classes */
+
+    .info{ padding-left: 45px;}
+
+    .card {
+    position: relative;
+    min-width: 0;
+    word-wrap: break-word;
+    border: 1px solid #e5e9f2;
+    border-radius: .2rem;
+    background-color: transparent;
+    color:#f53d53;
+    }
+
+    .card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid #000000;
+    }
+    .list-group-item{
+        color:#f53d53;
+        background-color: transparent;
+    }
+    label{
+        font-size: 20px;
+        color:#f53d53;;
+    }

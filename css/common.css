@@ -1,8 +1,8 @@
 :root{
-    --pink: hsl(353, 90%, 60%);
-    --pinker:hsl(353, 90%, 45%);
-    --white: #e7e7e7;
-    --black : #1b1a1f;
+    --pink: rgb(245, 61, 83);
+    --pinker: rgb(218, 11, 36);
+    --white: rgb(232, 232, 232);
+    --black : rgb(27, 26, 31);
 }
 /**#c21e31**/
 

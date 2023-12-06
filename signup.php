@@ -47,11 +47,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
      }
 
-     // Insert data into the table
-     $sql = "INSERT INTO students_list (username, phone, email, password) VALUES ('$username', '$phone', '$email', '$password')";
+         // Generate a random user ID
+    $userId = uniqid();
+
+     // Insert details into the table(database)
+     $sql = "INSERT INTO students_list (user_id, username, phone, email, password) VALUES ('$userId', '$username', '$phone', '$email', '$password')";
  
      if ($conn->query($sql) === TRUE) {
          echo "New student added successfully";
+
+         // Redirect to login.html
+        header("Location: login.html");
+        exit();
      } else {
          echo "Error: " . $sql . "<br>" . $conn->error;
      }

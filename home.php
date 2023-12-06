@@ -4,7 +4,7 @@ $sql = "SELECT * FROM hostel_lists";
 $result = mysqli_query($conn, $sql);
 
 ?>
-
+ 
 <html>
 
 <head>
@@ -80,16 +80,16 @@ $result = mysqli_query($conn, $sql);
     <div class="container">
 
 
-        <div class="cards-group h-100">
+        <div class="cards-group">
 
             <!--card iterating-->
             <?php
                 while ($row = mysqli_fetch_assoc($result)) {
             ?>
-                <div class="card">
+                <div class="card stacked">
                     <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
                     <div class="card-content">
-                        <div class="card-price">$<?php echo $row["price"] ?>/<span style="font-size:60%">month</span> </div>
+                        <div class="card-price">₹.<?php echo $row["price"] ?>/<span style="font-size:60%">month</span> </div>
                         <div class="card-name"><?php echo $row["name"] ?></div>
                         <div class="card-rating">
                             <i class="fa-solid fa-star"></i>

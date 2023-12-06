@@ -4,7 +4,7 @@ $sql = "SELECT * FROM hostel_lists";
 $result = mysqli_query($conn, $sql);
 
 ?>
- 
+
 <html>
 
 <head>
@@ -69,44 +69,83 @@ $result = mysqli_query($conn, $sql);
 
     <!--Body-->
 
-    <!--Search-->
-    <div class="container-fluid home-search">
+    <!-- Search Bar -->
+    <form method="GET" class="container-fluid home-search">
         <div class="search">
-            <input id="search" type="text" placeholder="Search Hostels.." />
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <input name="search" type="text" value="<?php if (isset($_GET['search'])) {
+                                                        echo ($_GET['search']);
+                                            } ?>" placeholder="Search Hostels.." autocomplete="off"/>
+
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
         </div>
-    </div>
+    </form>
+
     <!--Cards-->
     <div class="container">
         <div class="cards-group">
-            <!--card iterating-->
+
+            <!--Card: Searching-->
             <?php
-                while ($row = mysqli_fetch_assoc($result)) {
+            if (isset($_GET['search'])) {
+                $search = $_GET['search'];
+                $query = "SELECT * FROM hostel_lists WHERE CONCAT(name, price,location,description) LIKE '%$search%'";
+                $query_run = mysqli_query($conn, $query);
+
+                if (mysqli_num_rows($query_run) > 0) {
+
+                    while ($row = mysqli_fetch_assoc($query_run)) {
             ?>
-                <div class="card">
-                    <div class="glassback"></div>
-                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
-                    <div class="card-content">
-                        <div class="card-price">₹.<?php echo $row["price"] ?>/<span style="font-size:60%">month</span> </div>
-                        <div class="card-name"><?php echo $row["name"] ?></div>
-                        <div class="card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
+                        <div class="card">
+                            <div class="glassback"></div>
+                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
+                            <div class="card-content">
+                                <div class="card-price">₹.<?php echo $row["price"] ?>/<span style="font-size:60%">month</span> </div>
+                                <div class="card-name"><?php echo $row["name"] ?></div>
+                                <div class="card-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="card-location tag"><?php echo $row["location"] ?></div>
+                            </div>
                         </div>
-                        <div class="card-location tag"><?php echo $row["location"] ?></div>
+                    <?php
+                    }
+                } else {
+                    echo "<h1 class='text-pink'>No results</h1>";
+                }
+            } elseif (!isset($_GET['search']) || empty($_GET['search'])) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <div class="card">
+                        <div class="glassback"></div>
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
+                        <div class="card-content">
+                            <div class="card-price">₹.<?php echo $row["price"] ?>/<span style="font-size:60%">month</span> </div>
+                            <div class="card-name"><?php echo $row["name"] ?></div>
+                            <div class="card-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="card-location tag"><?php echo $row["location"] ?></div>
+                        </div>
                     </div>
-                </div>
             <?php
                 }
+            }
             ?>
         </div>
-
-        <div>
-            <i class="fa-solid fa-circle-plus add-btn"></i>
-        </div>
+    </div>
+    <div>
+        <i class="fa-solid fa-circle-plus add-btn"></i>
+    </div>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">

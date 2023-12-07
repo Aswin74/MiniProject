@@ -113,20 +113,23 @@ body{
 }
 
 button{
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.search-btn{
     position: absolute;
     right: 15px;
     padding: 2px;
     color: var(--pinker);
-    background: none;
-    outline: none;
-    border: none;
 }
 
 ::placeholder{
     color: var(--pinker);
 }
 
-button:active{
+.search-btn:active{
     transform: scaleX(1.1);
 }
 

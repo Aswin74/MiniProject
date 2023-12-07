@@ -31,7 +31,7 @@ body{
     }
 }
 
-.nav-item:active,.nav-item:after {
+.nav-item:active {
     border-bottom: 4px solid var(--pinker);
 }
 

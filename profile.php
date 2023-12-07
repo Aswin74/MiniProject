@@ -74,12 +74,18 @@
 
           <!--Login/SignUp-->
           <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-            <!--<a href="login.html" class="text-pink text-decoration-none">Login</a>
-            <a id="signup" href="login.html" class="text rounded-4 px-3 py-1">Sign Up</a>-->
-
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-user fs-5 me-2 text-pink">
-              <span class="fs-5"><?php echo $username ?></span>
             </i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>  
           </div>
         </div>
       </div>

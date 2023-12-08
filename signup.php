@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userId = uniqid();
 
      // Insert details into the table(database)
-     $sql = "INSERT INTO students_list (user_id, username, phone, email, password) VALUES ('$userId', '$username', '$phone', '$email', '$password')";
+     $sql = "INSERT INTO account_list (user_id, username, phone, email, password) VALUES ('$userId', '$username', '$phone', '$email', '$password')";
  
      if ($conn->query($sql) === TRUE) {
          echo "New student added successfully";

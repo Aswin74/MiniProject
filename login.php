@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM students_list WHERE username = '$username' AND password = '$password'";
+    $sql = "SELECT * FROM account_list WHERE username = '$username' AND password = '$password'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

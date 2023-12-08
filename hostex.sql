@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2023 at 10:21 AM
+-- Generation Time: Dec 08, 2023 at 10:36 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -29,10 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `account_list` (
   `user_id` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
   `phone` varchar(12) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `account_list`
+--
+
+INSERT INTO `account_list` (`user_id`, `username`, `phone`, `email`, `password`) VALUES
+('6572e2f05722e', 'Vijay', '2345634523', 'asf@gmail.com', 'asdasd');
 
 -- --------------------------------------------------------
 
@@ -80,7 +88,8 @@ CREATE TABLE `hostel_list` (
 ALTER TABLE `account_list`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `phone` (`phone`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indexes for table `booking_info`

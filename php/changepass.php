@@ -3,7 +3,7 @@ session_start();
 
 // Check if the user is logged in
 if (!isset($_SESSION['username'])) {
-    header("Location: login.html");
+    header("Location: ../login.html");
     exit();
 }
 
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($conn->query($sql_update_password) === TRUE) {
                 echo "Password updated successfully";
               //back to profile  
-                header("Location: profile.php");
+                header("Location: ../profile.php");
                 exit();
             } else {
                 echo "Error updating password: " . $conn->error;

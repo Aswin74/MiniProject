@@ -2,6 +2,10 @@ body{
     overflow: hidden;
 }
 
+.navbar{
+    border-bottom: none !important;
+}
+
 .content{
     animation-duration: 1.5s;
     animation-name: slidein;

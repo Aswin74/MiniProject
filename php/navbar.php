@@ -35,7 +35,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent p-0 border-bottom">
         <div class="container-fluid">
             <a class="navbar-brand py-2 me-1 ms-2" href="home.php">
-                <img class="logo" src="https://i.ibb.co/kJwz4xz/logo.png" />
+                <img class="logo" src="./img/logo/logo.png" />
             </a>
             <a class="navbar-brand fs-4 fw-medium" href="home.php">HostEx</a>
             <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">

@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION['username'] = $username;
         // Redirect to profile.php
-        header("Location: profile.php");
+        header("Location: ../profile.php");
         exit(); // Ensure that no other code is executed after the header
 
     } else {

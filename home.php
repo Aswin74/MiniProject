@@ -1,6 +1,6 @@
 <?php
 $conn = new mysqli("localhost", "root", "", "hostex");
-$sql = "SELECT * FROM hostel_lists";
+$sql = "SELECT * FROM hostel_list";
 $result = mysqli_query($conn, $sql);
 
 ?>
@@ -50,7 +50,7 @@ $result = mysqli_query($conn, $sql);
             <?php
             if (isset($_GET['search'])) {
                 $search = $_GET['search'];
-                $query = "SELECT * FROM hostel_lists WHERE CONCAT(name, price,location,description) LIKE '%$search%'";
+                $query = "SELECT * FROM hostel_list WHERE CONCAT(hname, price,location,description) LIKE '%$search%'";
                 $query_run = mysqli_query($conn, $query);
 
                 if (mysqli_num_rows($query_run) > 0) {
@@ -86,7 +86,7 @@ $result = mysqli_query($conn, $sql);
                         <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
                         <div class="card-content">
                             <div class="card-price">₹.<?php echo $row["price"] ?>/<span style="font-size:60%">month</span> </div>
-                            <div class="card-name"><?php echo $row["name"] ?></div>
+                            <div class="card-name"><?php echo $row["hname"] ?></div>
                             <div class="card-rating">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>

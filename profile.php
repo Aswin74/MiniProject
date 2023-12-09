@@ -14,7 +14,7 @@
        // Add more profile information as needed
    } else {
        // The user is not logged in, redirect to login page
-       header("Location: login.php");
+       header("Location: login.html");
        exit();
    }
    ?>
@@ -35,7 +35,9 @@
   <link rel="stylesheet" href="css/profile.css" />
   <!--Add/edit the about page css in about.css-->
 
-  <title>HostEx | Profile</title>
+  <!--title bar-->
+  <link rel="icon" href="./img/logo/logo.png" />
+  <title>HostEx | Login</title>
 </head>
 <body>
   <!--Create Each Contents/sections inside a div-->
@@ -105,11 +107,11 @@
                     </div>
                     <div class="list-group list-group-flush" role="tablist">
                         <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account" role="tab">Account</a>
-                        <?php echo '<a class="list-group-item list-group-item-action" href="changepass.php">Change password</a>'; ?>
+                        <?php echo '<a class="list-group-item list-group-item-action" href="./php/changepass.php">Change password</a>'; ?>
                         <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">Privacy and safety</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">Email notifications</a>
-                        <?php echo '<a class="list-group-item list-group-item-action" href="deleteuser.php">Delete Account</a>'; ?>
-                        <?php echo '<a class="list-group-item list-group-item-action" href="logout.php">Logout</a>'; ?>
+                        <?php echo '<a class="list-group-item list-group-item-action" href="./php/deleteuser.php">Delete Account</a>'; ?>
+                        <?php echo '<a class="list-group-item list-group-item-action" href="./php/logout.php">Logout</a>'; ?>
                     </div>
                 </div>
             </div>

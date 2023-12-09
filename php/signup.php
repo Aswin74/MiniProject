@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          echo "New student added successfully";
 
          // Redirect to login.html
-        header("Location: login.html");
+        header("Location: ../login.html");
         exit();
      } else {
          echo "Error: " . $sql . "<br>" . $conn->error;

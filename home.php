@@ -20,7 +20,9 @@ $result = mysqli_query($conn, $sql);
     <link rel="stylesheet" href="css/home.css" />
     <!--Add/edit the home page css in home.css-->
 
-    <title>HostEx | Home</title>
+  <!--title bar-->
+  <link rel="icon" href="./img/logo/logo.png" />
+  <title>HostEx | Login</title>
 </head>
 
 <body>

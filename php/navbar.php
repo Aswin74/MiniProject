@@ -9,12 +9,17 @@
         $logChange = '
         <!--User Logged in-->
         <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-            <i class="fa-solid fa-user fs-5 me-2 text-pink">
-            </i>
-          </div>
+            <div class="drop-down">
+              <a onclick="dropDown()"><i class="fa-solid fa-user fs-5 me-2 text-pink"></i></a>
+              <div class="drop-down_content">
+                  <h3 class="text-pink">'.$username.'</h3>
+                  <hr class="text-pink"/>
+                  <a href="./profile.php"><i class="fa-solid fa-gear me-3 text-pink"></i>Profile</a>
+                  <a href="./php/logout.php"><i class="fa-solid fa-right-from-bracket me-3 text-pink"></i>Logout</a>
+              </div>
+            </div>
+        </div>
         ';
-
-    session_write_close();
     }
 
     else{

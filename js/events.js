@@ -1,3 +1,12 @@
+//dropdown
+
+function dropDown(){
+    const dropDown= document.querySelector('.drop-down_content')
+    dropDown.classList.toggle('open')
+}
+
+
+
 //obsrever code
 
 const observer = new IntersectionObserver((entries) => {
@@ -14,4 +23,5 @@ const observer = new IntersectionObserver((entries) => {
 
 const hidden = document.querySelectorAll('.hidden') 
 hidden.forEach((el) => observer.observe(el)) //what to observe 
+
  

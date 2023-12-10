@@ -13,7 +13,7 @@ body{
 
 .content h1{
     font-family: 'Times New Roman';
-    font-size: clamp(50px,50%,64px);
+    font-size: clamp(50px,5vw,80px);
     font-weight: bold;
     color: var(--pink);
 }

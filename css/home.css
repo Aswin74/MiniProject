@@ -2,6 +2,10 @@ body{
     background-image: url('../img/home.jpg');
 }
 
+.navbar{
+    border-bottom: 1px solid rgb(245, 61, 83,0.5);
+}
+
 .glassback{
     backdrop-filter: blur(5px);
     z-index: -1;

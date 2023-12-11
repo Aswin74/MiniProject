@@ -37,7 +37,7 @@
    
    
    <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent p-0 border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent p-0">
         <div class="container-fluid">
             <a class="navbar-brand py-2 me-1 ms-2" href="home.php">
                 <img class="logo" src="./img/logo/logo.png" />

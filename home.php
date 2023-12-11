@@ -64,7 +64,7 @@ $result = mysqli_query($conn, $sql);
                             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
                             <div class="card-content">
                                 <div class="card-price">₹.<?php echo $row["price"] ?>/<span style="font-size:60%">month</span> </div>
-                                <div class="card-name"><?php echo $row["name"] ?></div>
+                                <div class="card-name"><?php echo $row["hname"] ?></div>
                                 <div class="card-rating">
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>

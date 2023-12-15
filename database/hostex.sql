@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2023 at 10:36 AM
+-- Generation Time: Dec 15, 2023 at 12:39 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,17 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `account_list` (
   `user_id` varchar(20) NOT NULL,
   `username` varchar(20) NOT NULL,
+  `fullname` varchar(30) DEFAULT NULL,
   `phone` varchar(12) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `password` varchar(20) NOT NULL,
+  `address` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `account_list`
 --
 
-INSERT INTO `account_list` (`user_id`, `username`, `phone`, `email`, `password`) VALUES
-('6572e2f05722e', 'Vijay', '2345634523', 'asf@gmail.com', 'asdasd');
+INSERT INTO `account_list` (`user_id`, `username`, `fullname`, `phone`, `email`, `password`, `address`) VALUES
+('6572e2f05722e', 'Vijay', 'Vijay Jacob', '1234123414', 'asf@gmail.com', 'asdasd', 'asd123xzc'),
+('657c0f5134efb', 'Aswin', 'Aswin P', '1234123412', 'read@gmail.com', '1234', 'bsra 12');
 
 -- --------------------------------------------------------
 

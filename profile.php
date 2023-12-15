@@ -1,5 +1,4 @@
 <html>
-
 <?php
 session_start();
 
@@ -7,7 +6,6 @@ if (isset($_SESSION['username'])) {
   // The user is logged in
   $username = $_SESSION['username'];
   // Fetch additional profile information from the database if needed
-
   // Display the user's profile
   //echo "Welcome to your profile, $username!";
 
@@ -102,7 +100,7 @@ if (isset($_SESSION['username'])) {
             <div class="list-group list-group-flush" role="tablist">
               <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account" role="tab">Account</a>
               <?php echo '<a class="list-group-item list-group-item-action" href="./php/changepass.php">Change password</a>'; ?>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">Privacy and safety</a>
+              <?php echo '<a class="list-group-item list-group-item-action" href="privacy.html">Privacy and safety</a>'; ?>
               <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">Email notifications</a>
               <?php echo '<a class="list-group-item list-group-item-action" href="./php/deleteuser.php">Delete Account</a>'; ?>
               <?php echo '<a class="list-group-item list-group-item-action" href="./php/logout.php">Logout</a>'; ?>
@@ -133,31 +131,6 @@ if (isset($_SESSION['username'])) {
                 </div>
               </div>
             </div>
-            <div class="tab-pane fade" id="password" role="tabpanel">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Password</h5>
-                  <form>
-                    <!-- form content for Password tab -->
-                    <div class="form-group">
-                      <label for="inputPasswordCurrent">Current password</label>
-                      <input type="password" class="form-control" id="inputPasswordCurrent">
-                      <small><a href="#">Forgot your password?</a></small>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputPasswordNew">New password</label>
-                      <input type="password" class="form-control" id="inputPasswordNew">
-                    </div>
-                    <div class="form-group">
-                      <label for="inputPasswordNew2">Verify password</label>
-                      <input type="password" class="form-control" id="inputPasswordNew2">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <!-- Other tab content -->
           </div>
         </div>
       </div>

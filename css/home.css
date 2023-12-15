@@ -147,6 +147,32 @@ button{
     z-index: 9;
 }
 
+/** PopUp Modal **/
+
+.modal-content{
+    color: var(--white);
+    background: var(--black);
+}
+
+.modal-header,.modal-footer{
+    border: none;
+}
+
+.modal-title{
+    color: var(--pinker);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /**Responsiveness**/
 
 @media (max-width: 991px) {

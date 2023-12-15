@@ -1,11 +1,11 @@
-//dropdown
+//dropdown : navbar login
 
 function dropDown(){
     const dropDown= document.querySelector('.drop-down_content')
     dropDown.classList.toggle('open')
 }
 
-//active tab
+//active tab : navbar
 
 const activePath = window.location
 console.log(activePath.pathname)
@@ -17,7 +17,7 @@ thePath.forEach(link => {
     }
 })
 
-//obsrever code
+//obsrever code : about us
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => { //looping over the entires

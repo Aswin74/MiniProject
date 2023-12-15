@@ -20,15 +20,15 @@ $result = mysqli_query($conn, $sql);
     <link rel="stylesheet" href="css/home.css" />
     <!--Add/edit the home page css in home.css-->
 
-  <!--title bar-->
-  <link rel="icon" href="./img/logo/logo.png" />
-  <title>HostEx | Home</title>
+    <!--title bar-->
+    <link rel="icon" href="./img/logo/logo.png" />
+    <title>HostEx | Home</title>
 </head>
 
 <body>
 
     <!--Navbar-->
-    <?php include("./php/navbar.php")?>
+    <?php include("./php/navbar.php") ?>
 
     <!--Body-->
     <!-- Search Bar -->
@@ -36,7 +36,7 @@ $result = mysqli_query($conn, $sql);
         <div class="search">
             <input name="search" type="text" value="<?php if (isset($_GET['search'])) {
                                                         echo ($_GET['search']);
-                                            } ?>" placeholder="Search Hostels.." autocomplete="off"/>
+                                                    } ?>" placeholder="Search Hostels.." autocomplete="off" />
 
             <button class="search-btn">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -55,10 +55,13 @@ $result = mysqli_query($conn, $sql);
                 $query = "SELECT * FROM hostel_list WHERE CONCAT(hname, price,location,description) LIKE '%$search%'";
                 $query_run = mysqli_query($conn, $query);
 
-                if (mysqli_num_rows($query_run) > 0) {
+                if (mysqli_num_rows($query_run) > 0) { //Successfull Search
 
                     while ($row = mysqli_fetch_assoc($query_run)) {
             ?>
+
+                        <!-- Successful Card Search --->
+
                         <div class="card">
                             <div class="glassback"></div>
                             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
@@ -78,11 +81,14 @@ $result = mysqli_query($conn, $sql);
                     <?php
                     }
                 } else {
-                    echo "<h1 class='text-pink'>No results</h1>";
+                    echo "<h1 class='text-pink'>No results</h1>"; //Unsuccessful search
                 }
             } elseif (!isset($_GET['search']) || empty($_GET['search'])) {
-                while ($row = mysqli_fetch_assoc($result)) {
+                while ($row = mysqli_fetch_assoc($result)) { //if not search | empty search array
                     ?>
+
+                    <!-- Home Default Cards -->
+
                     <div class="card">
                         <div class="glassback"></div>
                         <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
@@ -105,11 +111,47 @@ $result = mysqli_query($conn, $sql);
             ?>
         </div>
     </div>
-    <div>
-        <i class="fa-solid fa-circle-plus add-btn"></i>
-    </div>
 
-    </div>
+    <!-- Adding Hostel Privillege -->
+
+    <?php  //checks if user is logged in && the username is eren
+    if (isset($_SESSION['username']) && $_SESSION['username'] == 'eren') {
+    ?>
+
+        <!-- Button trigger modal -->
+        <div  data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa-solid fa-circle-plus add-btn"></i>
+        </div>
+
+        <!-- Modal -->
+        <form class="modal fade" id="exampleModal" action="./php/addHostel.php" method="post" autocomplete="off"
+            tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="exampleModalLabel">Add New Hostel</h1>
+                        <i class="btn fa fa-x text-pinker" data-bs-dismiss="modal" aria-label="Close"></i>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="" name="hname" placeholder="Hostel Name" required/>
+                        <input type="text" class="" name="location" placeholder="Place Name" required/>
+                        <input type="number" class="" name="price" placeholder="Rent per month" required/>
+                        <input type="text" class="" name="hphone" placeholder="Phone number" required/>
+                        <input type="text" class="" name="haddress" placeholder="Full Address" required/>
+                        <input type="text" class="" name="description" placeholder="Description" required/>
+                        <input type="file" class="" name="photo" accept="image/*"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn">Add</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    <?php } ?>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="./js/events.js"></script>
 </body>

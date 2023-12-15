@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Dec 15, 2023 at 07:40 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
+=======
+-- Generation Time: Dec 15, 2023 at 12:39 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+>>>>>>> 01ae0d8f03115c853b43011294e3c26f11b74bc4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,10 +36,14 @@ SET time_zone = "+00:00";
 CREATE TABLE `account_list` (
   `user_id` varchar(20) NOT NULL,
   `username` varchar(20) NOT NULL,
+  `fullname` varchar(30) DEFAULT NULL,
   `phone` varchar(12) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL,
+<<<<<<< HEAD
   `fullname` varchar(30) DEFAULT NULL,
+=======
+>>>>>>> 01ae0d8f03115c853b43011294e3c26f11b74bc4
   `address` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -41,10 +51,16 @@ CREATE TABLE `account_list` (
 -- Dumping data for table `account_list`
 --
 
+<<<<<<< HEAD
 INSERT INTO `account_list` (`user_id`, `username`, `phone`, `email`, `password`, `fullname`, `address`) VALUES
 ('6572e2f05722e', 'Vijay', '2345634523', 'asf@gmail.com', 'asdasd', NULL, NULL),
 ('657472dc2bff5', 'eren', '1234567890', 'eren@paradis.com', 'mikasa', NULL, NULL),
 ('65747935ba4b2', 'mikasa', '1234567891', 'mikasa@paradis.com', 'eren', NULL, NULL);
+=======
+INSERT INTO `account_list` (`user_id`, `username`, `fullname`, `phone`, `email`, `password`, `address`) VALUES
+('6572e2f05722e', 'Vijay', 'Vijay Jacob', '1234123414', 'asf@gmail.com', 'asdasd', 'asd123xzc'),
+('657c0f5134efb', 'Aswin', 'Aswin P', '1234123412', 'read@gmail.com', '1234', 'bsra 12');
+>>>>>>> 01ae0d8f03115c853b43011294e3c26f11b74bc4
 
 -- --------------------------------------------------------
 

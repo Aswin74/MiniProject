@@ -1,5 +1,4 @@
 <html>
-
 <?php
 session_start();
 
@@ -7,7 +6,6 @@ if (isset($_SESSION['username'])) {
   // The user is logged in
   $username = $_SESSION['username'];
   // Fetch additional profile information from the database if needed
-
   // Display the user's profile
   //echo "Welcome to your profile, $username!";
 
@@ -102,7 +100,7 @@ if (isset($_SESSION['username'])) {
             <div class="list-group list-group-flush" role="tablist">
               <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account" role="tab">Account</a>
               <?php echo '<a class="list-group-item list-group-item-action" href="./php/changepass.php">Change password</a>'; ?>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">Privacy and safety</a>
+              <?php echo '<a class="list-group-item list-group-item-action" href="privacy.html">Privacy and safety</a>'; ?>
               <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">Email notifications</a>
               <?php echo '<a class="list-group-item list-group-item-action" href="./php/deleteuser.php">Delete Account</a>'; ?>
               <?php echo '<a class="list-group-item list-group-item-action" href="./php/logout.php">Logout</a>'; ?>
@@ -118,46 +116,46 @@ if (isset($_SESSION['username'])) {
                 </div>
                 <div class="card-body">
                   <!-- form content for Account tab -->
+                  <?php
+                      $conn = new mysqli("localhost", "root", "", "hostex");
+
+                      if ($conn->connect_error) {
+                          die("Connection failed: " . $conn->connect_error);
+                      }
+                      $sql = "SELECT * FROM account_list WHERE username = '$username'";
+                      $result = $conn->query($sql);
+                      
+                      if ($result->num_rows > 0) {
+                          $userData = $result->fetch_assoc();
+                      
+                          //Populate Form Fields
+                          $fullname = $userData['fullname'];
+                          $email = $userData['email'];
+                          $phone = $userData['phone'];
+                          $address = $userData['address'];
+                      } else {
+                          echo "User not found!";
+                          exit;
+                      } 
+                  ?>
                   <div class="info" align="left">
+                  <form method="post" action="./php/profiledata.php">
                     <label for="username">Username: </label> <?php echo $username ?> <br><br>
+                    <input type="hidden" name="username" value="<?php echo $username ?>" />
                     <label for="Name">Full name:</label>
-                    <input type="text" id="Name" placeholder="Your Name" required><br>
+                    <input type="text" name="fullname" placeholder="Your Name" value="<?php echo $fullname; ?>"><br>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="Email" required><br>
+                    <input type="email" name="email" placeholder="Email" value="<?php echo $email; ?>"><br>
                     <label for="phone">Phone no:</label>
-                    <input type="tel" id="phone" placeholder="Phone" required><br>
-                    <label for="address">Address:</label>
-                    <textarea rows="3" cols="23" placeholder="Enter Address"></textarea><br>
+                    <input type="text" name="phone" placeholder="Phone" value="<?php echo $phone; ?>"><br>
+                    <label for="address">Address:</label><br>
+                    <textarea name="address" rows="3" cols="23" placeholder="Enter Address"><?php echo $address; ?></textarea><br>
                     <input type="submit" id="submit" value="Update">
+                  <form>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="tab-pane fade" id="password" role="tabpanel">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Password</h5>
-                  <form>
-                    <!-- form content for Password tab -->
-                    <div class="form-group">
-                      <label for="inputPasswordCurrent">Current password</label>
-                      <input type="password" class="form-control" id="inputPasswordCurrent">
-                      <small><a href="#">Forgot your password?</a></small>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputPasswordNew">New password</label>
-                      <input type="password" class="form-control" id="inputPasswordNew">
-                    </div>
-                    <div class="form-group">
-                      <label for="inputPasswordNew2">Verify password</label>
-                      <input type="password" class="form-control" id="inputPasswordNew2">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <!-- Other tab content -->
           </div>
         </div>
       </div>

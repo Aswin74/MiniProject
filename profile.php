@@ -116,17 +116,42 @@ if (isset($_SESSION['username'])) {
                 </div>
                 <div class="card-body">
                   <!-- form content for Account tab -->
+                  <?php
+                      $conn = new mysqli("localhost", "root", "", "hostex");
+
+                      if ($conn->connect_error) {
+                          die("Connection failed: " . $conn->connect_error);
+                      }
+                      $sql = "SELECT * FROM account_list WHERE username = '$username'";
+                      $result = $conn->query($sql);
+                      
+                      if ($result->num_rows > 0) {
+                          $userData = $result->fetch_assoc();
+                      
+                          //Populate Form Fields
+                          $fullname = $userData['fullname'];
+                          $email = $userData['email'];
+                          $phone = $userData['phone'];
+                          $address = $userData['address'];
+                      } else {
+                          echo "User not found!";
+                          exit;
+                      } 
+                  ?>
                   <div class="info" align="left">
+                  <form method="post" action="./php/profiledata.php">
                     <label for="username">Username: </label> <?php echo $username ?> <br><br>
+                    <input type="hidden" name="username" value="<?php echo $username ?>" />
                     <label for="Name">Full name:</label>
-                    <input type="text" id="Name" placeholder="Your Name" required><br>
+                    <input type="text" name="fullname" placeholder="Your Name" value="<?php echo $fullname; ?>"><br>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="Email" required><br>
+                    <input type="email" name="email" placeholder="Email" value="<?php echo $email; ?>"><br>
                     <label for="phone">Phone no:</label>
-                    <input type="tel" id="phone" placeholder="Phone" required><br>
-                    <label for="address">Address:</label>
-                    <textarea rows="3" cols="23" placeholder="Enter Address"></textarea><br>
+                    <input type="text" name="phone" placeholder="Phone" value="<?php echo $phone; ?>"><br>
+                    <label for="address">Address:</label><br>
+                    <textarea name="address" rows="3" cols="23" placeholder="Enter Address"><?php echo $address; ?></textarea><br>
                     <input type="submit" id="submit" value="Update">
+                  <form>
                   </div>
                 </div>
               </div>

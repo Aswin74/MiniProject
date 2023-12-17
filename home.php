@@ -12,9 +12,12 @@ $result = mysqli_query($conn, $sql);
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Linking bootstra v5.3-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!--icon pack: font awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--common.css should only contain common styles for all pages-->
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/home.css" />
@@ -60,25 +63,32 @@ $result = mysqli_query($conn, $sql);
                     while ($row = mysqli_fetch_assoc($query_run)) {
             ?>
 
-                        <!-- Successful Card Search --->
+            <!-- Successful Card Search --->
 
-                        <div class="card">
-                            <div class="glassback"></div>
-                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
-                            <div class="card-content">
-                                <div class="card-price">₹.<?php echo $row["price"] ?>/<span style="font-size:60%">month</span> </div>
-                                <div class="card-name"><?php echo $row["hname"] ?></div>
-                                <div class="card-rating">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <div class="card-location tag"><?php echo $row["location"] ?></div>
-                            </div>
-                        </div>
-                    <?php
+            <div class="card">
+                <div class="glassback"></div>
+                <img
+                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
+                <div class="card-content">
+                    <div class="card-price">₹.
+                        <?php echo $row["price"] ?>/<span style="font-size:60%">month</span>
+                    </div>
+                    <div class="card-name">
+                        <?php echo $row["hname"] ?>
+                    </div>
+                    <div class="card-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="card-location tag">
+                        <?php echo $row["location"] ?>
+                    </div>
+                </div>
+            </div>
+            <?php
                     }
                 } else {
                     echo "<h1 class='text-pink'>No results</h1>"; //Unsuccessful search
@@ -87,24 +97,31 @@ $result = mysqli_query($conn, $sql);
                 while ($row = mysqli_fetch_assoc($result)) { //if not search | empty search array
                     ?>
 
-                    <!-- Home Default Cards -->
+            <!-- Home Default Cards -->
 
-                    <div class="card">
-                        <div class="glassback"></div>
-                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
-                        <div class="card-content">
-                            <div class="card-price">₹.<?php echo $row["price"] ?>/<span style="font-size:60%">month</span> </div>
-                            <div class="card-name"><?php echo $row["hname"] ?></div>
-                            <div class="card-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                            <div class="card-location tag"><?php echo $row["location"] ?></div>
-                        </div>
+            <div class="card">
+                <div class="glassback"></div>
+                <img
+                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
+                <div class="card-content">
+                    <div class="card-price">₹.
+                        <?php echo $row["price"] ?>/<span style="font-size:60%">month</span>
                     </div>
+                    <div class="card-name">
+                        <?php echo $row["hname"] ?>
+                    </div>
+                    <div class="card-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="card-location tag">
+                        <?php echo $row["location"] ?>
+                    </div>
+                </div>
+            </div>
             <?php
                 }
             }
@@ -118,41 +135,67 @@ $result = mysqli_query($conn, $sql);
     if (isset($_SESSION['username']) && $_SESSION['username'] == 'eren') {
     ?>
 
-        <!-- Button trigger modal -->
-        <div  data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <i class="fa-solid fa-circle-plus add-btn"></i>
-        </div>
+    <!-- Button trigger modal -->
+    <div data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa-solid fa-circle-plus add-btn"></i>p
+    </div>
 
-        <!-- Modal -->
-        <form class="modal fade" id="exampleModal" action="./php/addHostel.php" method="post" autocomplete="off"
-            tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title" id="exampleModalLabel">Add New Hostel</h1>
-                        <i class="btn fa fa-x text-pinker" data-bs-dismiss="modal" aria-label="Close"></i>
+    <!-- Modal -->
+    <form class="modal fade" id="exampleModal" action="./php/addHostel.php" method="post" autocomplete="off"
+        tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLabel">Add New Hostel</h1>
+                    <i class="btn fa fa-x text-pinker" data-bs-dismiss="modal" aria-label="Close"></i>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-input">
+                        <input type="text" class="intext" name="hname" id="hname" required />
+                        <label for="hname">Hostel Name</label>
                     </div>
-                    <div class="modal-body">
-                        <input type="text" class="" name="hname" placeholder="Hostel Name" required/>
-                        <input type="text" class="" name="location" placeholder="Place Name" required/>
-                        <input type="number" class="" name="price" placeholder="Rent per month" required/>
-                        <input type="text" class="" name="hphone" placeholder="Phone number" required/>
-                        <input type="text" class="" name="haddress" placeholder="Full Address" required/>
-                        <input type="text" class="" name="description" placeholder="Description" required/>
-                        <input type="file" class="" name="photo" accept="image/*"/>
+
+                    <div class="modal-input">
+                        <input type="text" class="intext" name="location" id="location" required />
+                        <label for="location">Place</label>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn">Add</button>
+
+                    <div class="modal-input">
+                        <input type="number" class="intext" name="price" id="price" required />
+                        <label for="price">Price per month</label>
                     </div>
+
+                    <div class="modal-input">
+                        <input type="text" class="intext" name="hphone" id="hphone" required />
+                        <label for="hphone">Phone</label>
+                    </div>
+
+                    <div class="modal-input">
+                        <input type="text" class="intext" name="haddress" id="haddress" required />
+                        <label for="haddress">Address</label>
+                    </div>
+
+                    <div class="modal-input">
+                        <textarea name="description" id="description" required></textarea>
+                        <label for="description">Details</label>
+                    </div>
+
+                    <input type="file" class="infile" name="photo" accept="image/*" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="modal-btn modal-cls" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="modal-btn modal-add">Add</button>
                 </div>
             </div>
-        </form>
+        </div>
+    </form>
 
     <?php } ?>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="./js/events.js"></script>
 </body>
 

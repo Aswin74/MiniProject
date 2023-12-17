@@ -54,6 +54,7 @@ body{
 .card-name{
     font-size: 1.2rem;
     font-weight: 350;
+    text-transform: capitalize;
     margin-bottom: 5px;
 }
 
@@ -71,6 +72,7 @@ body{
     padding: 3px 6px;
     font-size: 0.8rem;
     font-weight: 600;
+    text-transform: capitalize;
     border: solid 2px var(--pinker);
     border-radius: 15px;
     background: var(--pinker);
@@ -147,6 +149,10 @@ button{
     z-index: 9;
 }
 
+.add-btn:active{
+    transform: scale(0.9);
+}
+
 /** PopUp Modal **/
 
 .modal-content{
@@ -162,6 +168,95 @@ button{
     color: var(--pinker);
 }
 
+.modal-body .modal-input:first-child{
+    margin-top: 15px;
+}
+
+.modal-input{
+    position: relative;
+}
+
+.modal-body .intext,.modal-body textarea{
+    width: 100%;
+    font-size: 20px;
+    color: var(--white);
+    padding-inline: 10px;
+    background: none;
+    margin-bottom: 25px;
+    border: 2px solid var(--pinker);
+    border-radius: 26px;
+}
+
+.modal-body .intext{
+    height: 45px;
+}
+
+.modal-body textarea{
+    height: 200px;
+    padding-block: 5px;
+    resize: none;
+}
+
+.modal-body label{
+    position: absolute;
+    color: var(--pinker);
+    font-size: 20px;
+    font-weight: 500;
+    top: 8px;
+    left: 15px;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.modal-body .intext:focus ~ label,
+.modal-body textarea:focus ~ label{
+    top : -27px;
+    left: 0;
+    transform: scale(0.8);
+}
+
+/* Modal Scrollbar */
+.modal-body::-webkit-scrollbar,
+.modal-body textarea::-webkit-scrollbar{
+    background: transparent;
+    box-shadow: 0 0 5px var(--pinker) inset;
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb,
+.modal-body textarea::-webkit-scrollbar-thumb{
+    background: var(--pinker);
+    border-radius: 10px;
+}
+
+.modal-add{
+    background: var(--pinker);
+    color: white;
+}
+
+.modal-cls{
+    background-color: rgba(232, 232, 232, 0.6);
+    color: white;
+}
+
+.modal-btn{
+    padding-inline: 0.85rem;
+    padding-block: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.modal-btn:hover{
+    opacity: 0.8;
+}
+
+.modal-btn:active{
+    transform: scale(0.9);
+}
+
+/* Removing increase symbol */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

@@ -6,6 +6,10 @@ body{
     border-bottom: 1px solid rgb(245, 61, 83,0.5);
 }
 
+a{
+    text-decoration: none;
+}
+
 .glassback{
     backdrop-filter: blur(5px);
     z-index: -1;
@@ -35,6 +39,8 @@ body{
 
 .card img{
     width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
     padding: 10px;
     border-radius: 25px;
 }
@@ -165,7 +171,7 @@ button{
 }
 
 .modal-title{
-    color: var(--pinker);
+    color: var(--pink);
 }
 
 .modal-body .modal-input:first-child{
@@ -199,7 +205,7 @@ button{
 
 .modal-body label{
     position: absolute;
-    color: var(--pinker);
+    color: var(--pink);
     font-size: 20px;
     font-weight: 500;
     top: 8px;
@@ -209,24 +215,12 @@ button{
 }
 
 .modal-body .intext:focus ~ label,
-.modal-body textarea:focus ~ label{
+.modal-body textarea:focus ~ label,
+.modal-body .intext:valid ~ label,
+.modal-body textarea:valid ~ label{
     top : -27px;
     left: 0;
     transform: scale(0.8);
-}
-
-/* Modal Scrollbar */
-.modal-body::-webkit-scrollbar,
-.modal-body textarea::-webkit-scrollbar{
-    background: transparent;
-    box-shadow: 0 0 5px var(--pinker) inset;
-    border-radius: 10px;
-}
-
-.modal-body::-webkit-scrollbar-thumb,
-.modal-body textarea::-webkit-scrollbar-thumb{
-    background: var(--pinker);
-    border-radius: 10px;
 }
 
 .modal-add{

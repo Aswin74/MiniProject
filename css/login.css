@@ -35,9 +35,11 @@ p{
     }
 }
 
+/* signup/login */
+
 .form{
-    height: 400px;
-    width: 300px;
+    height: 450px;
+    width: 400px;
     margin: 7% auto;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -54,7 +56,7 @@ form {
     transition: 0.5s ease-in-out;
 }
 
-label{
+form label[for="hidden-btn"]{
     color:var(--white);
     font-size: 2.3rem;
     cursor:pointer;
@@ -64,14 +66,14 @@ label{
 .login{
     height: 460px;
     width:100%;
-    background-color: rgb(245, 63, 84,0.7);
+    background-color: var(--black);
     border-radius: 50%/10%;
     transform:translateY(-55px) ;
     transition: 0.5s ease-in-out;
 }
 
-.login label{
-    color:var(--white);
+.login label[for="hidden-btn"]{
+    color:var(--pink);
     transform: scale(0.6);
 }
 
@@ -80,16 +82,51 @@ label{
     color: var(--white);
 }
 
-input{
-    width:70%;
-    height:40px;
-    border: none;
-    border-radius: 7px;
-    margin-bottom: 5px;
+.signup-input,.login-input{
+    width: 70%;
 }
 
-.login input{
-    background-color: var(--white);
+input{
+    width:100%;
+    height:40px;
+    font-size: 20px;
+    padding-inline: 5%;
+    outline: none;
+    background: none;
+    border: 2px solid var(--pinker);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* Placeholder Animation */
+
+.signup-input,.login-input{
+    position: relative;
+}
+.signup-input label,.login-input label{
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    font-size: 20px;
+    pointer-events: none;
+    transition: 0.3s linear;
+}
+.signup-input input,.signup-input input:-webkit-autofill,
+.signup-input label{
+    color: var(--pink);
+}
+.login-input input,.login-input input:-webkit-autofill,
+.login-input label{
+    color: var(--pinker);
+    border-color: var(--pinker);
+}
+.login-input input:focus ~ label,
+.signup-input input:focus ~ label,
+.login-input input:valid ~ label,
+.signup-input input:valid ~ label{
+    transform: scale(0.8);
+    top: -41%;
+    left: 0;
 }
 
 .button{
@@ -100,6 +137,7 @@ input{
     font-weight: bold;
     font-size: 1rem;
     border:none;
+    outline: none;
     border-radius: 5px;
     margin-bottom: 15px;
 }
@@ -112,28 +150,26 @@ input{
     transform: scale(0.98);
 }
 
+/* Form Animation */
+
 #hidden-btn{
     display: none;
 }
 
 #hidden-btn:checked~.login{
-    transform: translateY(-330px);
-    background-color: var(--pink);
-}
-
-#hidden-btn:checked~.signup{
+    transform: translateY(-82%);
     background-color: var(--black);
 }
 
-#hidden-btn:checked~.login label{
+#hidden-btn:checked~.login label[for="hidden-btn"]{
     transform: scale(1);
 }
 
-#hidden-btn:checked~.signup label{
+#hidden-btn:checked~.signup label[for="hidden-btn"]{
     transform: scale(0.6);
 }
 
-/**for animation (Vanilla js)**/
+/**for transition animation (Vanilla js)**/
 
 .hidden{
     opacity: 0;

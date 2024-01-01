@@ -37,9 +37,10 @@ $result = mysqli_query($conn, $sql);
     <!-- Search Bar -->
     <form method="GET" class="container-fluid home-search">
         <div class="search">
-            <input name="search" type="text" value="<?php if (isset($_GET['search'])) {
-                                                        echo ($_GET['search']);
-                                                    } ?>" placeholder="Search Hostels.." autocomplete="off" />
+            <input name="search" type="text" minlength="3"
+                value="<?php if (isset($_GET['search'])) {
+                        echo ($_GET['search']);
+                    } ?>" placeholder="Search Hostels.." autocomplete="off" />
 
             <button class="search-btn">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -65,10 +66,10 @@ $result = mysqli_query($conn, $sql);
 
             <!-- Successful Card Search --->
 
-            <div class="card">
+            <a href="./php/hostel_details.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="card">
                 <div class="glassback"></div>
                 <img
-                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
+                    src="./img/hostel_images/<?php echo $row["hostel_image1"]; ?>" alt="hostel image" />
                 <div class="card-content">
                     <div class="card-price">₹.
                         <?php echo $row["price"] ?>/<span style="font-size:60%">month</span>
@@ -87,22 +88,23 @@ $result = mysqli_query($conn, $sql);
                         <?php echo $row["location"] ?>
                     </div>
                 </div>
-            </div>
+            </a>
+            
             <?php
                     }
                 } else {
                     echo "<h1 class='text-pink'>No results</h1>"; //Unsuccessful search
                 }
-            } elseif (!isset($_GET['search']) || empty($_GET['search'])) {
+            } elseif (!isset($_GET['search']) || empty($_GET['search'])) { //Default
                 while ($row = mysqli_fetch_assoc($result)) { //if not search | empty search array
                     ?>
 
             <!-- Home Default Cards -->
 
-            <div class="card">
+            <a href="./php/hostel_details.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="card">
                 <div class="glassback"></div>
                 <img
-                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/24/cb/33/8-bed-mixed-gender-dorm.jpg?w=300&h=-1&s=1" />
+                    src="./img/hostel_images/<?php echo $row["hostel_image1"]; ?>" alt="hostel image"/>
                 <div class="card-content">
                     <div class="card-price">₹.
                         <?php echo $row["price"] ?>/<span style="font-size:60%">month</span>
@@ -121,7 +123,8 @@ $result = mysqli_query($conn, $sql);
                         <?php echo $row["location"] ?>
                     </div>
                 </div>
-            </div>
+            </a>
+
             <?php
                 }
             }
@@ -131,8 +134,8 @@ $result = mysqli_query($conn, $sql);
 
     <!-- Adding Hostel Privillege -->
 
-    <?php  //checks if user is logged in && the username is eren
-    if (isset($_SESSION['username']) && $_SESSION['username'] == 'eren') {
+    <?php  //checks if user is logged in && the username is eren. strcasecmp to make case in-sensitive, boolean 0
+    if (isset($_SESSION['username']) && strcasecmp($_SESSION['username'], 'eren') === 0) {
     ?>
 
     <!-- Button trigger modal -->
@@ -141,8 +144,10 @@ $result = mysqli_query($conn, $sql);
     </div>
 
     <!-- Modal -->
-    <form class="modal fade" id="exampleModal" action="./php/addHostel.php" method="post" autocomplete="off"
-        tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form class="modal fade" action="./php/addHostel.php" method="post" id="exampleModal"
+        autocomplete="off"enctype="multipart/form-data" tabindex="-1" 
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
@@ -180,7 +185,10 @@ $result = mysqli_query($conn, $sql);
                         <label for="description">Details</label>
                     </div>
 
-                    <input type="file" class="infile" name="photo" accept="image/*" />
+                    <!-- Input Images -->
+                    <input type="file" class="infile" name="hostel_image1" accept="image/*" />
+                    <input type="file" class="infile" name="hostel_image2" accept="image/*" />
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="modal-btn modal-cls" data-bs-dismiss="modal">Close</button>

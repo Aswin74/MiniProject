@@ -90,6 +90,7 @@ if (isset($_SESSION['username'])) {
 
   <div class="container mt-4">
     <div class="content">
+      <div class="glassback"></div>
       <h1>Your Account</h1>
       <div class="row">
         <div class="col-md-5 col-xl-4">

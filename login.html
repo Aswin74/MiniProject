@@ -45,17 +45,42 @@
 
         <form action="./php/signup.php" method="post" class="signup d-flex flex-column align-items-center pt-3 pb-5">
           <label class="mb-4" for="hidden-btn">SignUp</label>
-          <input name="username" type="text" placeholder=" username" required>
-          <input name="phone" type="tel" placeholder=" phone number" required>
-          <input name="email" type="email" placeholder=" email" required>
-          <input name="password" type="password" placeholder=" password" required>
+          <div class="signup-input">
+            <input name="username" id="username" type="text" required>
+            <label for="username">username</label>
+          </div>
+
+          <div class="signup-input">
+            <input name="phone" id="phone" type="tel" pattern="[0-9]{10}" required>
+            <label for="phone">phone</label>
+          </div>
+
+          <div class="signup-input">
+            <input name="email" type="email" id="email" required>
+            <label for="email">email</label>
+          </div>
+
+          <div class="signup-input">
+            <input name="password" id="password" type="password" required>
+            <label for="password">password</label>
+          </div>
+
           <button class="button mt-2">Sign Up</button>
         </form>
 
       <form action="./php/login.php" method="post" class="login d-flex flex-column align-items-center pb-4">
         <label class="mb-4" for="hidden-btn">Login</label>
-        <input name="username" type="text" placeholder=" username" required>
-        <input name="password" type="password" placeholder=" password" required>
+
+        <div class="login-input">
+          <input name="username" type="text" required>
+          <label for="username">username</label>
+        </div>
+
+        <div class="login-input">
+          <input name="password" type="password" required>
+          <label for="password">password</label>
+        </div>
+
         <button class="button">Login</button>
       </form>
     </div>

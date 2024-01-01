@@ -8,14 +8,23 @@
     $hphone = $_POST['hphone'];
     $haddress = $_POST['haddress'];
     $description = $_POST['description'];
-    //space for accepting image format. ??
+
+    //For accepting image format. 
+
+    $hostel_image1 = $_FILES['hostel_image1']['name'];
+    $hostel_image2 = $_FILES['hostel_image2']['name'];
+
+    //accessing temporary name for images
+
+    $temp_image1 = $_FILES['hostel_image1']['tmp_name'];
+    $temp_image2 = $_FILES['hostel_image2']['tmp_name'];
 
     $errors = array();
 
     //Text field validation
     if(empty($hname) || empty($location)){
         $errors[] = "Required Field";
-    } elseif(!preg_match("/^[a-zA-Z0-9 ]+$/", $hname) || !preg_match("/^[a-zA-Z0-9 ]+$/", $location)){
+    } elseif(!preg_match("/^[a-zA-Z0-9  -]+$/", $hname) || !preg_match("/^[a-zA-Z0-9 ]+$/", $location)){
         $errors[] = 'name / location Should only contain letters and numbers';
     }
 
@@ -36,6 +45,19 @@
     elseif(!is_numeric($price))
         $errors[] = 'Price should only contain numbers';
 
+    // Image validation
+
+    if(empty($hostel_image1) || empty($hostel_image2)){
+        $errors[] = "Upload 2 Images";
+    }
+    else{
+
+    //moving uploaded files into folder
+
+        move_uploaded_file($temp_image1,"../img/hostel_images/$hostel_image1");
+        move_uploaded_file($temp_image2,"../img/hostel_images/$hostel_image2");
+    }
+
     //errors array empty then add hostel
     if(empty($errors)){
 
@@ -48,9 +70,11 @@
         }
 
         //adding values to the dB by binding to prevent SQL inection
-        $add_sql = "INSERT INTO hostel_list (hname, location, price, hphone, haddress, description) VALUES (?,?,?,?,?,?)";
+        $add_sql = "INSERT INTO hostel_list (hname, location, price, hphone, haddress,
+        description, hostel_image1, hostel_image2) VALUES (?,?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($add_sql);
-        $stmt->bind_param("sssdss",$hname,$location,$price,$hphone,$haddress,$description);
+        $stmt->bind_param("ssdsssss",$hname,$location,$price,$hphone,$haddress,$description,
+                $hostel_image1, $hostel_image2);
         $stmt->execute();
 
         // Check if the execution was successful

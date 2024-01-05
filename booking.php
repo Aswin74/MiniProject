@@ -102,7 +102,9 @@
     </table><hr>
 
       
-    <tr><th align="center"><input type="submit" id="btn1" value="Ready to Pay"></th></tr>
+    <tr><th align="center"><div class="detail-book-btn">
+      <button class="book-now" data-hostel_id=<?php echo $hostel_id ?> data-hname=<?php echo $hname ?> data-price=<?php echo $price ?>>Book Now</button>
+  </div></th></tr>
    
 	  </table>
     
@@ -113,7 +115,61 @@
 	</form>
  </div>
 
+  <!-- PAYMENT PROCESS PHP & jQuery-->
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+      $(".book-now").click(function() {
+          <?php if (isset($_SESSION['username'])) : ?>
+
+              var price = $(this).data('price');
+              var hostel_id = $(this).data('hostel_id');
+              var hname = $(this).data('hname');
+
+
+              var options = {
+                  "key": "rzp_test_tQxI3YgXxMPulM", //  Key ID generated from the Dashboard
+                  "amount": price * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                  "currency": "INR",
+                  "name": "HostEx",
+                  "description": hname,
+                  "image": "img/logo/logo.png",
+                  "handler": function(response) {
+                      var payment_id = response.razorpay_payment_id;
+
+                      $.ajax({
+                          url: "./php/payment-process.php",
+                          type: "POST",
+                          data: {
+                              hostel_id: hostel_id,
+                              payment_id: payment_id
+                          },
+
+                          success: function(finalresponse) {
+                              if (finalresponse == 'done') {
+                                  window.location.href = "http://localhost/MiniProject/php/pay-success.php";
+                              } else {
+                                  alert('Please check console.log to find error');
+                                  console.log(finalresponse);
+                              }
+                          }
+                      })
+
+                  },
+                  "theme": {
+                      "color": "#da0b24"
+                  }
+              };
+              var rzp1 = new Razorpay(options);
+              rzp1.open();
+              e.preventDefault();
+          <?php else : ?>
+              // Redirect to login.html if the user is not logged in
+              window.location.href = "login.html";
+          <?php endif; ?>
+      });
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

@@ -101,7 +101,7 @@ $result = mysqli_query($conn, $sql);
 
             <!-- Home Default Cards -->
 
-            <a href="./php/hostel_details.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="card">
+            <a href="./hostel_details.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="card">
                 <div class="glassback"></div>
                 <img
                     src="./img/hostel_images/<?php echo $row["hostel_image1"]; ?>" alt="hostel image"/>

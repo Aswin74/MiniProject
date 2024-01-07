@@ -1,0 +1,118 @@
+.h1{
+    h1{color: var(--pink);}
+}
+
+
+form{
+    width: 70%;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 20px;
+    color:var(--white); 
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--pink);
+}
+
+.form-title{
+    color: var(--pink);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.form-body .form-input:first-child{
+    margin-top: 15px;
+}
+
+.form-input{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-body .intext,.form-body textarea{
+    width: 70%;
+    font-size: 20px;
+    background: none;
+    color: var(--white);
+    padding-inline: 10px;
+    margin-bottom: 30px;
+    border: 2px solid var(--pinker);
+    border-radius: 26px;
+}
+
+.form-body .intext{
+    height: 45px;
+}
+
+.form-body .form-input textarea{
+    height: 200px;
+    padding-block: 5px;
+    resize: none;
+}
+
+.form-body label{
+    width: 30%;
+    color: var(--pink);
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+input[type="radio"]{
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    font: inherit;
+    color: var(--white);
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid var(--white);
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+    background-color: var(--pinker);
+}
+
+#submit{
+    border: none;
+    background: var(--pink);
+    border-radius: 5px;
+    font-size: 20px;
+    color: var(--white);
+    width: 100%;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+#submit:hover{
+    opacity:0.7;
+}
+
+@media (max-width: 991px) {
+    form{
+        width: 90%;
+    }
+    .form-input{
+        flex-direction: row;
+    }
+    .form-body label{
+        width: 100%;
+    }
+    .form-body .intext,.form-body textarea{
+        width: 100%;
+    }
+    .input-field.gender{
+        flex-direction: column;
+        
+        label{
+            width: 30%;
+        }
+        label.gender-title{
+            width: 100%;
+        }
+        
+    }
+}
+

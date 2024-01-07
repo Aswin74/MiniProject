@@ -17,7 +17,7 @@ session_start();
   <h2>Payment has been successful</h2>
 
   <div class="alert alert-success">
-    <strong>Please note your payment id!</strong><?php echo $_SESSION['payment_id'];?> 
+    <strong>Please note your payment id! : </strong><?php echo $_SESSION['payment_id'];?> 
   </div>
   
 </div>

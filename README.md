@@ -2,23 +2,34 @@
 A ***Responsive*** Hostel Management website.
 
 ## Languages & Frameworks Used
-Front End : **HTML, CSS, Bootstrap , Javascript.**
-Back End : **PHP , MySQL**
+Front End : **HTML, CSS, Bootstrap , Javascript.**  
+Back End : **PHP , MySQL**  
 
-### 1. Login/Signup Page
+### Login/Signup Page
   * Created an Interactive UI for Login and Signup.
   * Made the working of login and signup using _PHP_
   * Gave access to specific user for admin privileges.
 
-### 2. Home Page
+### Profile Page
+  * Users can modify their user info provided
+
+### Home Page
   * Created Visually appealing UI for Homepage.
-  * Retrieved Data from the database for the card contents using _PHP_ & _MySQL_
+  * Retrieved Data from the database for the card contents using ***PHP & MySQL***
   * Privileged user can add more hostels.
+  * Privileged users can add new hostels when logged in.
 
-### 3. About Us Page
-  * Added Scroll Animations for each page using Javascript.
+### Hostel Details Page
+  * Can view the Details of the selected hosted from home and can be booked.
+  * Used **razorpay API** as the payment gateway with ***php & jQuery***
 
-### 4. Contact Us Page
-  * 
+### About Us Page
+  * Implemented an overview of the project with scroll animations
 
-### 
+### Contact Us Page
+  * Users can get in touch with the core team.
+
+###  
+
+
+[Test Cards](https://devguide.payu.in/api/miscellaneous/test-card/)

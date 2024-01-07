@@ -67,7 +67,6 @@ $result = mysqli_query($conn, $sql);
             <!-- Successful Card Search --->
 
             <a href="./php/hostel_details.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="card">
-                <div class="glassback"></div>
                 <img
                     src="./img/hostel_images/<?php echo $row["hostel_image1"]; ?>" alt="hostel image" />
                 <div class="card-content">
@@ -102,7 +101,6 @@ $result = mysqli_query($conn, $sql);
             <!-- Home Default Cards -->
 
             <a href="./hostel_details.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="card">
-                <div class="glassback"></div>
                 <img
                     src="./img/hostel_images/<?php echo $row["hostel_image1"]; ?>" alt="hostel image"/>
                 <div class="card-content">
@@ -136,11 +134,12 @@ $result = mysqli_query($conn, $sql);
 
     <?php  //checks if user is logged in && the username is eren. strcasecmp to make case in-sensitive, boolean 0
     if (isset($_SESSION['username']) && strcasecmp($_SESSION['username'], 'eren') === 0) {
+
     ?>
 
     <!-- Button trigger modal -->
     <div data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <i class="fa-solid fa-circle-plus add-btn"></i>p
+        <i class="fa-solid fa-circle-plus add-btn"></i>
     </div>
 
     <!-- Modal -->

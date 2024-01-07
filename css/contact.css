@@ -7,10 +7,6 @@ body{
     
 }
 
-.glassback{
-    backdrop-filter: blur(10px);
-}
-
 .content{
     margin: auto;;
     height: fit-content;
@@ -18,6 +14,7 @@ body{
     padding: 2em;
     text-align: center;
     border-radius: 10px;
+    backdrop-filter: blur(10px);
     box-shadow: 0 0 10px var(--pink);
 }
 

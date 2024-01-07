@@ -9,11 +9,12 @@ if ($conn->connect_error) {
 session_start();
 date_default_timezone_set("Asia/Calcutta");
 
+$user_id = $_POST['user_id'];
 $payment_id = $_POST['payment_id'];
 $hostel_id = $_POST['hostel_id'];
 $dt = date('Y-m-d h:i:s');
 
-$sql = "insert into orders (hostel_id,payment_id,added_date) values ('" . $hostel_id . "','" . $payment_id . "','" . $dt . "')";
+$sql = "insert into bookings (user_id,hostel_id,payment_id,added_date) values ('" . $user_id . "','" . $hostel_id . "','" . $payment_id . "','" . $dt . "')";
 
 $result = mysqli_query($conn, $sql);
 

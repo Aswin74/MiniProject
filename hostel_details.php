@@ -69,7 +69,6 @@ if (isset($_GET['hostel_id'])) {
 
     <!--Body-->
     <div class="content row">
-
         <!-- Carousel -->
         <div class="content-carousel col-lg-8">
             <div class="carousel-img-block">
@@ -126,7 +125,7 @@ if (isset($_GET['hostel_id'])) {
 
                 <!--book now button-->
                 <div class="detail-book-btn">
-                    <button class="book-now" data-hostel_id=<?php echo $hostel_id ?> data-hname=<?php echo $hname ?> data-price=<?php echo $price ?>>Book Now</button>
+                    <button class="book-now" data-user_id=<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '' ?> data-hostel_id=<?php echo $hostel_id ?> data-hname=<?php echo $hname ?> data-price=<?php echo $price ?>>Book Now</button>
                 </div>
             </div>
         </div>
@@ -141,6 +140,7 @@ if (isset($_GET['hostel_id'])) {
         $(".book-now").click(function() {
             <?php if (isset($_SESSION['username'])) : ?>
 
+                var user_id = $(this).data('user_id');
                 var price = $(this).data('price');
                 var hostel_id = $(this).data('hostel_id');
                 var hname = $(this).data('hname');
@@ -160,6 +160,7 @@ if (isset($_GET['hostel_id'])) {
                             url: "./php/payment-process.php",
                             type: "POST",
                             data: {
+                                user_id: user_id,
                                 hostel_id: hostel_id,
                                 payment_id: payment_id
                             },

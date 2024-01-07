@@ -10,11 +10,6 @@ a{
     text-decoration: none;
 }
 
-.glassback{
-    backdrop-filter: blur(5px);
-    z-index: -1;
-}
-
 .cards-group{
    display: grid;
     grid-template-columns: repeat(auto-fill ,minmax(14rem,1fr));
@@ -27,6 +22,7 @@ a{
     background-color: rgb(27, 26, 31,0.5) ;
     line-height: 1.3;
     cursor: pointer;
+    backdrop-filter: blur(5px);
     transition: box-shadow 0.3s, transform 0.3s;
 }
 

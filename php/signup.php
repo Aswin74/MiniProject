@@ -48,16 +48,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      }
 
          // Generate a random user ID
-    $userId = uniqid();
+    $user_id = uniqid();
 
      // Insert details into the table(database)
-     $sql = "INSERT INTO account_list (user_id, username, phone, email, password) VALUES ('$userId', '$username', '$phone', '$email', '$password')";
+     $sql = "INSERT INTO account_list (user_id, username, phone, email, password) VALUES ('$user_id', '$username', '$phone', '$email', '$password')";
  
      if ($conn->query($sql) === TRUE) {
          echo "New student added successfully";
 
          // Redirect to login.html
-        header("Location: ../login.html");
+        header("Location: ../user_details.php?user_id=$user_id");
         exit();
      } else {
          echo "Error: " . $sql . "<br>" . $conn->error;

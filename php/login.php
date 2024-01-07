@@ -15,10 +15,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        echo "Login successful! Welcome, $username!";
-        // setting session variable here for logged-in user
+        $row = $result->fetch_assoc();
+        
+        // Store user_id in a variable
+        $user_id = $row['user_id'];
+
+        // setting session variables here for the logged-in user
         session_start();
-        $_SESSION['username'] = $username;
+        $_SESSION['username'] = $username;     
+        $_SESSION['user_id'] = $user_id;
         // Redirect to profile.php
         header("Location: ../profile.php");
         exit(); // Ensure that no other code is executed after the header

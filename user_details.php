@@ -38,23 +38,23 @@ if (isset($_GET['user_id'])) {
         <!-- Personal Information -->
         <div class="form-input">
           <label for="studentName">Full Name</label>
-          <input type="text" class="intext" id="studentName" name="" required />
+          <input type="text" class="intext" id="studentName" name="studentName" required />
         </div>
 
         <!-- Guardian Information -->
         <div class="form-input">
           <label for="guardianName">Guardian</label>
-          <input type="text" class="intext" id="guardianName" name="" required />
+          <input type="text" class="intext" id="guardianName" name="guardianName" required />
         </div>
 
         <div class="form-input">
           <label for="guardianRelation">Relation to Guardian</label>
-          <input type="text" class="intext" id="guardianRelation" name="" required />
+          <input type="text" class="intext" id="guardianRelation" name="guardianRelaion" required />
         </div>
 
         <div class="form-input">
           <label for="guardianPhone">Guardian's phone</label>
-          <input type="tel" class="intext" id="guardianPhone" name="" required />
+          <input type="tel" class="intext" id="guardianPhone" name="guardianPhone" required />
         </div>
 
         <!-- Gender -->
@@ -70,45 +70,45 @@ if (isset($_GET['user_id'])) {
         <!-- Address Information -->
         <div class="form-input">
           <label for="permanentAddress">Permanent Address</label>
-          <textarea class="intext" id="permanentAddress" rows="3" cols="23" name="" required></textarea>
+          <textarea class="intext" id="permanentAddress" rows="3" cols="23" name="permanentAddres" required></textarea>
         </div>
 
         <div class="form-input">
           <label for="nationality">Nationality</label>
-          <input type="text" class="intext" id="nationality" name="" required />
+          <input type="text" class="intext" id="nationality" name="nationality" required />
         </div>
 
         <div class="form-input">
           <label for="state">State</label>
-          <input type="text" class="intext" id="state" name="" required />
+          <input type="text" class="intext" id="state" name="state" required />
         </div>
 
         <div class="form-input">
           <label for="district">District</label>
-          <input type="text" class="intext" id="district" name="" required />
+          <input type="text" class="intext" id="district" name="district" required />
         </div>
 
         <div class="form-input">
           <label for="postalCode">Postal code</label>
-          <input type="text" class="intext" id="postalCode" name="" required />
+          <input type="text" class="intext" id="postalCode" name="postalCode" required />
         </div>
 
         <!-- College Information -->
         <div class="form-input">
           <label for="collegeName">Name of the college</label>
-          <input type="text" class="intext" id="collegeName" name="" required />
+          <input type="text" class="intext" id="collegeName" name="collegeName" required />
         </div>
 
         <!-- ID Upload -->
         <div class="form-input">
-          <label for="filee">Upload College ID</label>
-          <input type="file" class="infile" id="idUpload" name="filee" accept=".pdf, .doc, .docx" />
+          <label for="idUpload">Upload College ID</label>
+          <input type="file" class="infile" id="idUpload" name="idUpload" accept=".pdf, .doc, .docx" />
         </div>
 
         <!-- Aadhar Information -->
         <div class="form-input">
           <label for="aadharNumber">Aadhar Number</label>
-          <input type="text" class="intext" id="aadharNumber" name="" required />
+          <input type="text" class="intext" id="aadharNumber" name="aadharNumber" required />
         </div>
 
         <!-- Aadhar Upload >

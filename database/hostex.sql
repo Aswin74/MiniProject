@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2024 at 03:34 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Generation Time: Jan 12, 2024 at 10:02 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `account_list` (
   `user_id` varchar(20) NOT NULL,
   `username` varchar(20) NOT NULL,
+  `fullname` varchar(30) DEFAULT NULL,
   `phone` varchar(12) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL,
@@ -40,11 +41,12 @@ CREATE TABLE `account_list` (
 -- Dumping data for table `account_list`
 --
 
-INSERT INTO `account_list` (`user_id`, `username`, `phone`, `email`, `password`, `address`) VALUES
-('6572e2f05722e', 'Vijay', '2345634523', 'asf@gmail.com', 'asdasd', NULL),
-('657472dc2bff5', 'eren', '1234567890', 'eren@paradis.com', 'mikasa', NULL),
-('65747935ba4b2', 'mikasa', '1234567891', 'mikasa@paradis.com', 'eren', NULL),
-('659ab27a52962', 'thorffin', '5644221144', 'thorffin@vinland.com', 'thorffin', NULL);
+INSERT INTO `account_list` (`user_id`, `username`, `fullname`, `phone`, `email`, `password`, `address`) VALUES
+('6572e2f05722e', 'Vijay', NULL, '2345634523', 'asf@gmail.com', 'asdasd', NULL),
+('657472dc2bff5', 'eren', 'Eren Yeager', '1234567890', 'eren@paradis.com', 'mikasa', ''),
+('65747935ba4b2', 'mikasa', 'Mikasa Ackerman', '1234567891', 'mikasa@paradis.com', 'eren', ''),
+('659ab27a52962', 'thorffin', NULL, '5644221144', 'thorffin@vinland.com', 'thorffin', NULL),
+('65a0fdf1502f4', 'Aswin', NULL, '9878976789', 'rrrrr@gmail.com', 'asdf', NULL);
 
 -- --------------------------------------------------------
 

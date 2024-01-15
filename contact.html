@@ -31,13 +31,13 @@
     <div class="content">
       <!--div class="glassback"></div> 7/1/24 not working-->
       <h1>Contact Us</h1>
-      <form class="d-flex flex-wrap">
-        <input type="text" id="firstName" placeholder="First Name" required>
-        <input type="text" id="lastName" placeholder="Last Name" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="tel" id="phone" placeholder="Phone" required>
+      <form action="php/sendmail.php" method="post" class="d-flex flex-wrap">
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" placeholder="Last Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone" required>
         <h4>Type Here.... </h4>
-        <textarea></textarea>
+        <textarea name="message"></textarea>
         <input type="submit" id="submit" value="Submit">
       </form>
     </div>

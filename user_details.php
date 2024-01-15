@@ -31,7 +31,7 @@ if (isset($_GET['user_id'])) {
 
 <body>
   <div class="container d-flex justify-content-center">
-    <form action="./php/user_details_add.php">
+    <form method="post" action="./php/user_details_add.php">
 
       <h1 class="form-title">Complete Your Profile</h1>
       <div class="form-body">
@@ -70,7 +70,7 @@ if (isset($_GET['user_id'])) {
         <!-- Address Information -->
         <div class="form-input">
           <label for="permanentAddress">Permanent Address</label>
-          <textarea class="intext" id="permanentAddress" rows="3" cols="23" name="permanentAddres" required></textarea>
+          <textarea class="intext" id="permanentAddress" rows="3" cols="23" name="permanentAddress" required></textarea>
         </div>
 
         <div class="form-input">

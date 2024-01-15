@@ -1,15 +1,13 @@
 <?php
-session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ $conn = new mysqli("localhost", "root", "", "hostex");
 
-$conn = new mysqli("localhost", "root", "", "hostex");
-
-// Check connection
-if ($conn->connect_error) {
+ // Check connection
+ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
+ }
 
-//storing user_id from signup into a variable
-if (isset($_GET['user_id'])) {
+ if (isset($_GET['user_id'])) {
     $user_id = $_GET['user_id'];
 
     // Personal Information
@@ -40,11 +38,12 @@ if (isset($_GET['user_id'])) {
     $sql = "INSERT INTO user_details (user_id, studentName, guardianName, guardianRelation, guardianPhone, gender, permanentAddress, nationality, state, district, postalCode, collegeName, aadharNumber) VALUES ('$user_id', '$studentName', '$guardianName', '$guardianRelation', '$guardianPhone', '$gender', '$permanentAddress', '$nationality', '$state', '$district', '$postalCode', '$collegeName', '$aadharNumber')";
 
     if ($conn->query($sql) === TRUE) {
-        header("../php/profile.php");
+        header("../login.html");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-}
+ }
 
-$conn->close();
+ $conn->close();
+}
 ?>

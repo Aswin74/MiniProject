@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2024 at 10:02 AM
+-- Generation Time: Jan 18, 2024 at 05:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -46,7 +46,8 @@ INSERT INTO `account_list` (`user_id`, `username`, `fullname`, `phone`, `email`,
 ('657472dc2bff5', 'eren', 'Eren Yeager', '1234567890', 'eren@paradis.com', 'mikasa', ''),
 ('65747935ba4b2', 'mikasa', 'Mikasa Ackerman', '1234567891', 'mikasa@paradis.com', 'eren', ''),
 ('659ab27a52962', 'thorffin', NULL, '5644221144', 'thorffin@vinland.com', 'thorffin', NULL),
-('65a0fdf1502f4', 'Aswin', NULL, '9878976789', 'rrrrr@gmail.com', 'asdf', NULL);
+('65a0fdf1502f4', 'Aswin', NULL, '9878976789', 'rrrrr@gmail.com', 'asdf', NULL),
+('65a5374598d81', 'Asa', NULL, '1234123417', 'df@gmail.com', 'asa', NULL);
 
 -- --------------------------------------------------------
 
@@ -108,6 +109,7 @@ INSERT INTO `hostel_list` (`hostel_id`, `hname`, `location`, `price`, `hphone`, 
 
 CREATE TABLE `user_details` (
   `user_id` varchar(20) NOT NULL,
+  `studentName` varchar(30) NOT NULL,
   `guardian` text NOT NULL,
   `relation` text NOT NULL,
   `gphone` varchar(12) NOT NULL,

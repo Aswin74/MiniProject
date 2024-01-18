@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $aadharNumber = $_POST['aadharNumber'];
 
     // SQL query to insert data into 'user_details' table
-    $sql = "INSERT INTO user_details (user_id, studentName, guardianName, guardianRelation, guardianPhone, gender, permanentAddress, nationality, state, district, postalCode, collegeName, aadharNumber) VALUES ('$user_id', '$studentName', '$guardianName', '$guardianRelation', '$guardianPhone', '$gender', '$permanentAddress', '$nationality', '$state', '$district', '$postalCode', '$collegeName', '$aadharNumber')";
+    $sql = "INSERT INTO user_details (user_id, studentName, guardian, relation, gphone, gender, address, nationality, state, district, pincode, clg_name, Aadhaar) VALUES ('$user_id', '$studentName', '$guardianName', '$guardianRelation', '$guardianPhone', '$gender', '$permanentAddress', '$nationality', '$state', '$district', '$postalCode', '$collegeName', '$aadharNumber')";
 
     if ($conn->query($sql) === TRUE) {
         header("../login.html");

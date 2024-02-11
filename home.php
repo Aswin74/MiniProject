@@ -66,7 +66,7 @@ $result = mysqli_query($conn, $sql);
 
             <!-- Successful Card Search --->
 
-            <a href="./php/hostel_details.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="card">
+            <a href="./hostel_details.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="card">
                 <img
                     src="./img/hostel_images/<?php echo $row["hostel_image1"]; ?>" alt="hostel image" />
                 <div class="card-content">

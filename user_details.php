@@ -6,7 +6,24 @@ $conn = new mysqli("localhost", "root", "", "hostex");
 //storing user_id from signup into a variable
 if (isset($_SESSION['user_id'])) {
   $user_id = $_SESSION['user_id'];
-}
+        $sql = "SELECT * FROM user_details WHERE user_id = '$user_id'";
+                    $result = $conn->query($sql); 
+                    if ($result->num_rows > 0) {
+                          $userData = $result->fetch_assoc();                  
+                          //Populate Form Fields
+                            $studentName = $userData['studentName'];
+                            $guardianName = $userData['guardian'];
+                            $guardianRelation = $userData['relation'];
+                            $guardianPhone = $userData['gphone'];
+                            $permanentAddress = $userData['address'];
+                            $nationality = $userData['nationality'];
+                            $state = $userData['state'];
+                            $district = $userData['district'];
+                            $postalCode = $userData['pincode'];
+                            $collegeName = $userData['clg_name'];
+                            $aadharNumber = $userData['Aadhaar'];
+                      }
+}      
 ?>
 
 <html>
@@ -37,24 +54,24 @@ if (isset($_SESSION['user_id'])) {
       <div class="form-body">
         <!-- Personal Information -->
         <div class="form-input">
-          <label for="studentName">Full Name</label>
-          <input type="text" class="intext" id="studentName" name="studentName" required />
+          <label for="studentName">Full Name</label> 
+          <input type="text" class="intext" id="studentName" name="studentName" required value="<?php if (isset($userData['studentName'])) { echo $studentName;} ?>">
         </div>
 
         <!-- Guardian Information -->
         <div class="form-input">
           <label for="guardianName">Guardian</label>
-          <input type="text" class="intext" id="guardianName" name="guardianName" required />
+          <input type="text" class="intext" id="guardianName" name="guardianName"  required value="<?php if (isset($userData['guardian'])) { echo $guardianName;}?>">
         </div>
 
         <div class="form-input">
           <label for="guardianRelation">Relation to Guardian</label>
-          <input type="text" class="intext" id="guardianRelation" name="guardianRelation" required />
+          <input type="text" class="intext" id="guardianRelation" name="guardianRelation" required value="<?php if (isset($userData['relation'])) { echo $guardianRelation;}?>">
         </div>
 
         <div class="form-input">
           <label for="guardianPhone">Guardian's phone</label>
-          <input type="tel" class="intext" id="guardianPhone" name="guardianPhone" required />
+          <input type="tel" class="intext" id="guardianPhone" name="guardianPhone" required value="<?php if (isset($userData['gphone'])) { echo $guardianPhone;}?>">
         </div>
 
         <!-- Gender -->
@@ -70,33 +87,33 @@ if (isset($_SESSION['user_id'])) {
         <!-- Address Information -->
         <div class="form-input">
           <label for="permanentAddress">Permanent Address</label>
-          <textarea class="intext" id="permanentAddress" rows="3" cols="23" name="permanentAddress" required></textarea>
+          <textarea class="intext" id="permanentAddress" rows="3" cols="23" name="permanentAddress" required> <?php if (isset($userData['address'])) { echo $permanentAddress;} ?> </textarea>
         </div>
 
         <div class="form-input">
           <label for="nationality">Nationality</label>
-          <input type="text" class="intext" id="nationality" name="nationality" required />
+          <input type="text" class="intext" id="nationality" name="nationality" required value="<?php if (isset($userData['nationality'])) { echo $nationality;}?>">
         </div>
 
         <div class="form-input">
           <label for="state">State</label>
-          <input type="text" class="intext" id="state" name="state" required />
+          <input type="text" class="intext" id="state" name="state" required value="<?php if (isset($userData['state'])) { echo $state;}?>">
         </div>
 
         <div class="form-input">
           <label for="district">District</label>
-          <input type="text" class="intext" id="district" name="district" required />
+          <input type="text" class="intext" id="district" name="district" required value="<?php if (isset($userData['district'])) { echo $district;}?>">
         </div>
 
         <div class="form-input">
           <label for="postalCode">Postal code</label>
-          <input type="text" class="intext" id="postalCode" name="postalCode" required />
+          <input type="text" class="intext" id="postalCode" name="postalCode" required value="<?php if (isset($userData['pincode'])) {echo $postalCode;}?>">
         </div>
 
         <!-- College Information -->
         <div class="form-input">
           <label for="collegeName">Name of the college</label>
-          <input type="text" class="intext" id="collegeName" name="collegeName" required />
+          <input type="text" class="intext" id="collegeName" name="collegeName" required value="<?php if (isset($userData['clg_name'])) { echo $collegeName;}?>">
         </div>
 
         <!-- ID Upload -->
@@ -108,7 +125,7 @@ if (isset($_SESSION['user_id'])) {
         <!-- Aadhar Information -->
         <div class="form-input">
           <label for="aadharNumber">Aadhar Number</label>
-          <input type="text" class="intext" id="aadharNumber" name="aadharNumber" required />
+          <input type="text" class="intext" id="aadharNumber" name="aadharNumber" required value="<?php if (isset($userData['Aadhaar'])) {echo $aadharNumber;}?>">
         </div>
 
         <!-- Aadhar Upload >

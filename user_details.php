@@ -4,8 +4,8 @@ session_start();
 $conn = new mysqli("localhost", "root", "", "hostex");
 
 //storing user_id from signup into a variable
-if (isset($_GET['user_id'])) {
-  $user_id = $_GET['user_id'];
+if (isset($_SESSION['user_id'])) {
+  $user_id = $_SESSION['user_id'];
 }
 ?>
 
@@ -31,7 +31,7 @@ if (isset($_GET['user_id'])) {
 
 <body>
   <div class="container d-flex justify-content-center">
-    <form method="post" action="./php/user_details_add.php">
+    <form method="post" action="./php/user_details_add.php?user_id=<?php echo $user_id ?>">
 
       <h1 class="form-title">Complete Your Profile</h1>
       <div class="form-body">
@@ -49,7 +49,7 @@ if (isset($_GET['user_id'])) {
 
         <div class="form-input">
           <label for="guardianRelation">Relation to Guardian</label>
-          <input type="text" class="intext" id="guardianRelation" name="guardianRelaion" required />
+          <input type="text" class="intext" id="guardianRelation" name="guardianRelation" required />
         </div>
 
         <div class="form-input">

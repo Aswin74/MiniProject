@@ -102,7 +102,7 @@ if (isset($_SESSION['username'])) {
               <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account" role="tab">Account</a>
               <?php echo '<a class="list-group-item list-group-item-action" href="./php/changepass.php">Change password</a>'; ?>
               <?php echo '<a class="list-group-item list-group-item-action" href="privacy.html">Privacy and safety</a>'; ?>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">Email notifications</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" href="./user_details.php" role="tab">User Details</a>
               <?php echo '<a class="list-group-item list-group-item-action" href="./php/deleteuser.php">Delete Account</a>'; ?>
               <?php echo '<a class="list-group-item list-group-item-action" href="./php/logout.php">Logout</a>'; ?>
             </div>

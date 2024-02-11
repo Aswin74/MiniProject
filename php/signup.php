@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          echo "New student added successfully";
 
          // Redirect to login.html
-        header("Location: ../user_details.php?user_id=$user_id");
+        header("Location: ../login.html");
         exit();
      } else {
          echo "Error: " . $sql . "<br>" . $conn->error;
@@ -74,4 +74,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
